@@ -10,6 +10,7 @@
   "main": "index.js",
   "typings": "types/index.d.ts",
   "scripts": {
+		"coverage": "node ./scripts/coverage.js \"packages/concerto-*\" && nyc report -t coverage --cwd . --report-dir coverage --reporter=lcov && cat ./coverage/lcov.info",
     "pretest": "npm run lint",
     "lint": "eslint .",
     "postlint": "npm run licchk",
@@ -40,6 +41,7 @@
     "chai": "4.3.6",
     "chai-as-promised": "7.1.1",
     "chai-things": "0.2.0",
+		"dayjs": "1.10.8",
     "debug": "4.3.1",
     "eslint": "8.2.0",
     "jsdoc": "^3.6.7",
