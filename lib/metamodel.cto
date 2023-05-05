@@ -90,7 +90,6 @@ concept AggregateValueType {
 }
 
 concept AggregateRelationshipValueType extends AggregateValueType {
-  o Boolean isRelationship
 }
 
 concept EnumDeclaration extends Declaration {
