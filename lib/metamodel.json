@@ -282,6 +282,128 @@
                 }
             ]
         },
+				{
+					"$class": "concerto.metamodel@1.0.0.ConceptDeclaration",
+					"name": "MapDeclaration",
+					"isAbstract": false,
+					"properties": [
+						{
+							"$class": "concerto.metamodel@1.0.0.ObjectProperty",
+							"name": "key",
+							"type": {
+								"$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+								"name": "MapKeyType"
+							},
+							"isArray": false,
+							"isOptional": false
+						},
+						{
+							"$class": "concerto.metamodel@1.0.0.ObjectProperty",
+							"name": "value",
+							"type": {
+								"$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+								"name": "AggregateValueType"
+							},
+							"isArray": false,
+							"isOptional": false
+						}
+					],
+					"superType": {
+						"$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+						"name": "Declaration"
+					}
+				},
+				{
+					"$class": "concerto.metamodel@1.0.0.ConceptDeclaration",
+					"name": "MapKeyType",
+					"isAbstract": false,
+					"properties": [
+						{
+							"$class": "concerto.metamodel@1.0.0.ObjectProperty",
+							"name": "type",
+							"type": {
+								"$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+								"name": "TypeIdentifier"
+							},
+							"isArray": false,
+							"isOptional": false
+						},
+						{
+							"$class": "concerto.metamodel@1.0.0.ObjectProperty",
+							"name": "decorators",
+							"type": {
+								"$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+								"name": "Decorator"
+							},
+							"isArray": true,
+							"isOptional": true
+						},
+						{
+							"$class": "concerto.metamodel@1.0.0.ObjectProperty",
+							"name": "location",
+							"type": {
+								"$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+								"name": "Range"
+							},
+							"isArray": false,
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"$class": "concerto.metamodel@1.0.0.ConceptDeclaration",
+					"name": "AggregateValueType",
+					"isAbstract": false,
+					"properties": [
+						{
+							"$class": "concerto.metamodel@1.0.0.ObjectProperty",
+							"name": "type",
+							"type": {
+								"$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+								"name": "TypeIdentifier"
+							},
+							"isArray": false,
+							"isOptional": false
+						},
+						{
+							"$class": "concerto.metamodel@1.0.0.ObjectProperty",
+							"name": "decorators",
+							"type": {
+								"$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+								"name": "Decorator"
+							},
+							"isArray": true,
+							"isOptional": true
+						},
+						{
+							"$class": "concerto.metamodel@1.0.0.ObjectProperty",
+							"name": "location",
+							"type": {
+								"$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+								"name": "Range"
+							},
+							"isArray": false,
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"$class": "concerto.metamodel@1.0.0.ConceptDeclaration",
+					"name": "AggregateRelationshipValueType",
+					"isAbstract": false,
+					"properties": [
+						{
+							"$class": "concerto.metamodel@1.0.0.BooleanProperty",
+							"name": "isRelationship",
+							"isArray": false,
+							"isOptional": false
+						}
+					],
+					"superType": {
+						"$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+						"name": "AggregateValueType"
+					}
+				},
         {
             "$class": "concerto.metamodel@1.0.0.ConceptDeclaration",
             "name": "EnumDeclaration",

@@ -72,6 +72,26 @@ abstract concept Declaration {
   o Range location optional
 }
 
+concept MapDeclaration extends Declaration {
+  o MapKeyType key
+  o AggregateValueType value
+}
+
+concept MapKeyType {
+  o TypeIdentifier type
+  o Decorator[] decorators optional
+  o Range location optional
+}
+
+concept AggregateValueType {
+  o TypeIdentifier type
+  o Decorator[] decorators optional
+  o Range location optional
+}
+
+concept AggregateRelationshipValueType extends AggregateValueType {
+}
+
 concept EnumDeclaration extends Declaration {
   o EnumProperty[] properties
 }
