@@ -698,6 +698,16 @@
                     },
                     "isArray": false,
                     "isOptional": true
+                },
+                {
+                    "$class": "concerto.metamodel@1.0.0.ObjectProperty",
+                    "name": "lengthValidator",
+                    "type": {
+                        "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+                        "name": "StringLengthValidator"
+                    },
+                    "isArray": false,
+                    "isOptional": true
                 }
             ],
             "superType": {
@@ -721,6 +731,25 @@
                     "name": "flags",
                     "isArray": false,
                     "isOptional": false
+                }
+            ]
+        },
+        {
+            "$class": "concerto.metamodel@1.0.0.ConceptDeclaration",
+            "name": "StringLengthValidator",
+            "isAbstract": false,
+            "properties": [
+                {
+                    "$class": "concerto.metamodel@1.0.0.IntegerProperty",
+                    "name": "minLength",
+                    "isArray": false,
+                    "isOptional": true
+                },
+                {
+                    "$class": "concerto.metamodel@1.0.0.IntegerProperty",
+                    "name": "maxLength",
+                    "isArray": false,
+                    "isOptional": true
                 }
             ]
         },
@@ -1122,6 +1151,16 @@
                     "type": {
                         "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
                         "name": "StringRegexValidator"
+                    },
+                    "isArray": false,
+                    "isOptional": true
+                },
+                {
+                    "$class": "concerto.metamodel@1.0.0.ObjectProperty",
+                    "name": "lengthValidator",
+                    "type": {
+                        "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+                        "name": "StringLengthValidator"
                     },
                     "isArray": false,
                     "isOptional": true
