@@ -148,11 +148,17 @@ concept DateTimeProperty extends Property {
 concept StringProperty extends Property {
   o String defaultValue optional
   o StringRegexValidator validator optional
+  o StringLengthValidator lengthValidator optional
 }
 
 concept StringRegexValidator {
   o String pattern
   o String flags
+}
+
+concept StringLengthValidator {
+  o Integer minLength optional
+  o Integer maxLength optional
 }
 
 concept DoubleProperty extends Property {
@@ -239,6 +245,7 @@ concept DoubleScalar extends ScalarDeclaration {
 concept StringScalar extends ScalarDeclaration {
   o String defaultValue optional
   o StringRegexValidator validator optional
+  o StringLengthValidator lengthValidator optional
 }
 
 concept DateTimeScalar extends ScalarDeclaration {
