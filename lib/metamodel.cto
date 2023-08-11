@@ -241,7 +241,7 @@ abstract concept ScalarDeclaration extends Declaration {
 }
 
 concept BooleanScalar extends ScalarDeclaration {
-  o Boolean defaultValue
+  o Boolean defaultValue optional
 }
 
 concept IntegerScalar extends ScalarDeclaration {
