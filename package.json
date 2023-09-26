@@ -53,6 +53,7 @@
     "typescript": "4.6.3"
   },
   "dependencies": {
+    "@accordproject/concerto-core": "3.9.1",
     "@accordproject/concerto-util": "3.9.1"
   },
   "browserslist": "> 0.25%, not dead",
