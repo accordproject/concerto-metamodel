@@ -113,7 +113,8 @@
                 {
                     "$class": "concerto.metamodel@1.0.0.DateTimeScalar",
                     "defaultValue": null,
-                    "name": "DateServiced"
+                    "name": "DateServiced",
+                    "namespace": "org.car"
                 },
                 {
                     "$class": "concerto.metamodel@1.0.0.MapDeclaration",
