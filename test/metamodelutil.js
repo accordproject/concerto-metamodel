@@ -100,6 +100,22 @@ describe('MetaModel (Car)', () => {
     });
 });
 
+describe('MetaModel (with Maps & Scalars)', () => {
+    process.env.ENABLE_MAP_TYPE = 'true'; // TODO Remove on release of MapType
+    const modelPath = path.resolve(__dirname, './cto/mapsImported.json');
+    let modelFile = JSON.parse(fs.readFileSync(modelPath, 'utf8'));
+
+    // The ModelFile resolved
+    const mapImportsResolved = JSON.parse(fs.readFileSync(path.resolve(__dirname, './cto/mapImportsResolved.json'), 'utf8'));
+
+    describe('#toMetaModel', () => {
+        it('should resolve all namespaces on a Model containing Map Types, where the Map Types are imported', async () => {
+            const mm1r = MetaModelUtil.resolveLocalNamesForAll(modelFile);
+            mm1r.should.deep.equal(mapImportsResolved);
+        });
+    });
+});
+
 describe('MetaModel (Car - with import types)', () => {
     const carModelPath = path.resolve(__dirname, './cto/carImportTypes.json');
     const carModel = JSON.parse(fs.readFileSync(carModelPath, 'utf8'));
