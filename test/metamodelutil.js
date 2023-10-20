@@ -15,6 +15,7 @@
 'use strict';
 
 const MetaModelUtil = require('../lib/metamodelutil');
+const ModelManager = require('@accordproject/concerto-core').ModelManager;
 
 const fs = require('fs');
 const path = require('path');
@@ -96,6 +97,31 @@ describe('MetaModel (Car)', () => {
         it('should convert a CTO model to its metamodel with name resolution', async () => {
             const mm1r = MetaModelUtil.resolveLocalNamesForAll(carModel);
             mm1r.should.deep.equal(carMetaModelResolved);
+        });
+    });
+});
+
+describe('MetaModel (with Maps & Scalars)', () => {
+    const modelManager = new ModelManager();
+
+    // Add base
+    const baseModelPath = path.resolve(__dirname, './cto/base.cto');
+    let baseModel = fs.readFileSync(baseModelPath, 'utf8');
+    modelManager.addCTOModel(baseModel, 'base.cto');
+
+    // Add Model which imports from base
+    const modelPath = path.resolve(__dirname, './cto/model.cto');
+    let model = fs.readFileSync(modelPath, 'utf8');
+    modelManager.addCTOModel(model, 'model.cto');
+
+    // The ModelFile resolved
+    const mapImportsResolved = JSON.parse(fs.readFileSync(path.resolve(__dirname, './cto/mapImportsResolved.json'), 'utf8'));
+
+    describe('#toMetaModel', () => {
+        it('should resolve all namespaces on a Model containing Map Types, where the Map Types are imported', async () => {
+            const modelFile = modelManager.getAst();
+            const mm1r = MetaModelUtil.resolveLocalNamesForAll(modelFile);
+            mm1r.should.deep.equal(mapImportsResolved);
         });
     });
 });

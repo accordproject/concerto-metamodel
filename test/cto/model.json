@@ -1,0 +1,105 @@
+{
+    "$class": "concerto.metamodel@1.0.0.Model",
+    "decorators": [],
+    "namespace": "com.testing@1.0.0",
+    "imports": [
+        {
+            "$class": "concerto.metamodel@1.0.0.ImportTypes",
+            "namespace": "com.testing.base@1.0.0",
+            "types": [
+                "Foo",
+                "Bar",
+                "Baz",
+                "Bazola",
+                "Bongo",
+                "Qux"
+            ]
+        }
+    ],
+    "declarations": [
+        {
+            "$class": "concerto.metamodel@1.0.0.MapDeclaration",
+            "name": "MapPermutation1",
+            "key": {
+                "$class": "concerto.metamodel@1.0.0.StringMapKeyType"
+            },
+            "value": {
+                "$class": "concerto.metamodel@1.0.0.ObjectMapValueType",
+                "type": {
+                    "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+                    "name": "Foo"
+                }
+            }
+        },
+        {
+            "$class": "concerto.metamodel@1.0.0.MapDeclaration",
+            "name": "MapPermutation2",
+            "key": {
+                "$class": "concerto.metamodel@1.0.0.StringMapKeyType"
+            },
+            "value": {
+                "$class": "concerto.metamodel@1.0.0.ObjectMapValueType",
+                "type": {
+                    "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+                    "name": "Bar"
+                }
+            }
+        },
+        {
+            "$class": "concerto.metamodel@1.0.0.MapDeclaration",
+            "name": "MapPermutation3",
+            "key": {
+                "$class": "concerto.metamodel@1.0.0.StringMapKeyType"
+            },
+            "value": {
+                "$class": "concerto.metamodel@1.0.0.ObjectMapValueType",
+                "type": {
+                    "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+                    "name": "Baz"
+                }
+            }
+        },
+        {
+            "$class": "concerto.metamodel@1.0.0.MapDeclaration",
+            "name": "MapPermutation4",
+            "key": {
+                "$class": "concerto.metamodel@1.0.0.StringMapKeyType"
+            },
+            "value": {
+                "$class": "concerto.metamodel@1.0.0.ObjectMapValueType",
+                "type": {
+                    "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+                    "name": "Bazola"
+                }
+            }
+        },
+        {
+            "$class": "concerto.metamodel@1.0.0.MapDeclaration",
+            "name": "MapPermutation5",
+            "key": {
+                "$class": "concerto.metamodel@1.0.0.StringMapKeyType"
+            },
+            "value": {
+                "$class": "concerto.metamodel@1.0.0.ObjectMapValueType",
+                "type": {
+                    "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+                    "name": "Bongo"
+                }
+            }
+        },
+        {
+            "$class": "concerto.metamodel@1.0.0.MapDeclaration",
+            "name": "MapPermutation6",
+            "key": {
+                "$class": "concerto.metamodel@1.0.0.StringMapKeyType"
+            },
+            "value": {
+                "$class": "concerto.metamodel@1.0.0.ObjectMapValueType",
+                "type": {
+                    "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+                    "name": "Qux"
+                }
+            }
+        }
+    ]
+}
