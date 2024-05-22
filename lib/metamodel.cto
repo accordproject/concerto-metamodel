@@ -224,6 +224,19 @@ concept ImportTypes extends Import {
   o String[] types
 }
 
+concept AliasType{
+  o String name
+  o String aliasName optional
+}
+
+concept ImportAliasType extends Import {
+  o AliasType name
+}
+
+concept ImportAliasTypes extends Import {
+  o AliasType[] types
+}
+
 concept Model {
   o String namespace
   o String sourceUri optional
