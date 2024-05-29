@@ -1061,6 +1061,46 @@
       }
     },
     {
+      "$class":"concerto.metamodel@1.0.0.ConceptDeclaration",
+      "name":"AliasType",
+      "isAbstract":false,
+      "properties":[
+        {
+          "$class": "concerto.metamodel@1.0.0.StringProperty",
+          "name": "name",
+          "isArray": false,
+          "isOptional": false
+        },
+        {
+          "$class": "concerto.metamodel@1.0.0.StringProperty",
+          "name": "aliasName",
+          "isArray": false,
+          "isOptional": true
+        }
+      ]
+    },
+    {
+      "$class": "concerto.metamodel@1.0.0.ConceptDeclaration",
+      "name": "ImportAliasTypes",
+      "isAbstract": false,
+      "properties": [
+        {
+          "$class": "concerto.metamodel@1.0.0.ObjectProperty",
+          "name": "AliasType",
+          "type": {
+            "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+            "name": "AliasType"
+          },
+          "isArray": true,
+          "isOptional": false
+        }
+      ],
+      "superType": {
+        "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+        "name": "Import"
+      }
+    },
+    {
       "$class": "concerto.metamodel@1.0.0.ConceptDeclaration",
       "name": "Model",
       "isAbstract": false,

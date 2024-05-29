@@ -229,9 +229,10 @@ concept AliasType{
   o String aliasName optional
 }
 
-concept ImportAliasType extends Import {
-  o AliasType name
-}
+// To discuss: Not required i think !! 
+// concept ImportAliasType extends Import {
+//   o AliasType name
+// }
 
 concept ImportAliasTypes extends Import {
   o AliasType[] types
