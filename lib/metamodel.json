@@ -999,7 +999,7 @@
     },
     {
       "$class":"concerto.metamodel@1.0.0.ConceptDeclaration",
-      "name":"AliasType",
+      "name":"AliasedType",
       "isAbstract":false,
       "properties":[
         {
@@ -1010,7 +1010,7 @@
         },
         {
           "$class": "concerto.metamodel@1.0.0.StringProperty",
-          "name": "aliasName",
+          "name": "aliasedName",
           "isArray": false,
           "isOptional": false
         }
@@ -1078,7 +1078,7 @@
           "name": "aliasedTypes",
           "type": {
             "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
-            "name": "AliasType"
+            "name": "AliasedType"
           },
           "isArray": true,
           "isOptional": true

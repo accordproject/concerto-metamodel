@@ -208,9 +208,9 @@ concept LongDomainValidator {
   o Long upper optional
 }
 
-concept AliasType{
+concept AliasedType{
   o String name
-  o String aliasName
+  o String aliasedName
 }
 abstract concept Import {
   o String namespace
@@ -226,7 +226,7 @@ concept ImportType extends Import {
 
 concept ImportTypes extends Import {
   o String[] types
-  o AliasType[] aliasedTypes optional
+  o AliasedType[] aliasedTypes optional
 }
 
 concept Model {

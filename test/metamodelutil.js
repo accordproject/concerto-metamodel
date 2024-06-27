@@ -186,6 +186,16 @@ describe('importFullyQualifiedNames', () => {
             const result = MetaModelUtil.importFullyQualifiedNames(ast);
             result.should.deep.equal(['test.Foo', 'test.Bar']);
         });
+        it('should return imports when aliasing', async () => {
+            const ast = {
+                $class: 'concerto.metamodel@1.0.0.ImportTypes',
+                namespace: 'test',
+                types: ['Foo', 'Bar'],
+                aliasedTypes:{'f':'Foo','b':'Bar'}
+            };
+            const result = MetaModelUtil.importFullyQualifiedNames(ast);
+            result.should.deep.equal(['test.Foo', 'test.Bar']);
+        });
     });
 
     it('should throw for unrecognized import', async () => {
