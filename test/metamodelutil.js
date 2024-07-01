@@ -100,6 +100,18 @@ describe('MetaModel (Car)', () => {
     });
 });
 
+describe('MetaModel (Car) aliaed', () => {
+    const ModelPath = path.resolve(__dirname, './cto/aliasedImport.json');
+    const Model = JSON.parse(fs.readFileSync(ModelPath, 'utf8'));
+    const MetaModelResolved = JSON.parse(fs.readFileSync(path.resolve(__dirname, './cto/aliasedImportResolved.json'), 'utf8'));
+
+    describe('#toMetaModel', () => {
+        it('should convert a CTO model to its metamodel with name resolution', async () => {
+            const mm1r = MetaModelUtil.resolveLocalNamesForAll(Model);
+            mm1r.should.deep.equal(MetaModelResolved);
+        });
+    });
+});
 describe('MetaModel (with Maps & Scalars)', () => {
     process.env.ENABLE_MAP_TYPE = 'true'; // TODO Remove on release of MapType
     const modelPath = path.resolve(__dirname, './cto/mapsImported.json');
