@@ -100,16 +100,93 @@ describe('MetaModel (Car)', () => {
     });
 });
 
-describe('MetaModel (Car) aliaed', () => {
-    const ModelPath = path.resolve(__dirname, './cto/aliasedImport.json');
-    const Model = JSON.parse(fs.readFileSync(ModelPath, 'utf8'));
-    const MetaModelResolved = JSON.parse(fs.readFileSync(path.resolve(__dirname, './cto/aliasedImportResolved.json'), 'utf8'));
+describe('MetaModel  aliasing', () => {
 
-    describe('#toMetaModel', () => {
-        it('should convert a CTO model to its metamodel with name resolution', async () => {
-            const mm1r = MetaModelUtil.resolveLocalNamesForAll(Model);
-            mm1r.should.deep.equal(MetaModelResolved);
-        });
+    it('should convert a CTO model to its metamodel with name resolution', async () => {
+        const ModelPath = path.resolve(__dirname, './cto/aliasedImport.json');
+        const Model = JSON.parse(fs.readFileSync(ModelPath, 'utf8'));
+        const MetaModelResolved = JSON.parse(fs.readFileSync(path.resolve(__dirname, './cto/aliasedImportResolved.json'), 'utf8'));
+
+        const mm1r = MetaModelUtil.resolveLocalNamesForAll(Model);
+        mm1r.should.deep.equal(MetaModelResolved);
+    });
+
+    it('Should throw if name not found',async()=>{
+        const model = {
+            '$class': 'concerto.metamodel@1.0.0.Models',
+            'models': [
+                {
+                    '$class': 'concerto.metamodel@1.0.0.Model',
+                    decorators: [],
+                    namespace: 'org.vehicle',
+                    imports: [],
+                    declarations: [
+                        {
+                            '$class': 'concerto.metamodel@1.0.0.ConceptDeclaration',
+                            name: 'wheel',
+                            isAbstract: false,
+                            properties: [
+                                {
+                                    '$class': 'concerto.metamodel@1.0.0.IntegerProperty',
+                                    name: 'radius',
+                                    isArray: false,
+                                    isOptional: false,
+                                },
+                                {
+                                    '$class': 'concerto.metamodel@1.0.0.StringProperty',
+                                    name: 'material',
+                                    isArray: false,
+                                    isOptional: false,
+                                }
+                            ],
+
+                        }
+                    ]
+                },
+                {
+                    '$class': 'concerto.metamodel@1.0.0.Model',
+                    decorators: [],
+                    namespace: 'org.test',
+                    imports: [
+                        {
+                            '$class': 'concerto.metamodel@1.0.0.ImportTypes',
+                            namespace: 'org.vehicle',
+                            types: [
+                                'wheel'
+                            ],
+                            aliasedTypes: [
+                                {
+                                    '$class': 'concerto.metamodel@1.0.0.AliasedType',
+                                    name: 'wheel',
+                                    aliasedName: 'w'
+                                }
+                            ]
+                        }
+                    ],
+                    declarations: [
+                        {
+                            '$class': 'concerto.metamodel@1.0.0.ConceptDeclaration',
+                            name: 'car',
+                            isAbstract: false,
+                            properties: [
+                                {
+                                    '$class': 'concerto.metamodel@1.0.0.ObjectProperty',
+                                    name: 'wheels',
+                                    type: {
+                                        '$class': 'concerto.metamodel@1.0.0.TypeIdentifier',
+                                        name: 'wheel'
+                                    },
+                                    isArray: true,
+                                    isOptional: false,
+                                }
+                            ],
+                        }
+                    ]
+                }
+            ]
+
+        };
+        (()=>MetaModelUtil.resolveLocalNamesForAll(model)).should.throw();
     });
 });
 describe('MetaModel (with Maps & Scalars)', () => {
