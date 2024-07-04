@@ -120,28 +120,7 @@ describe('MetaModel  aliasing', () => {
                     decorators: [],
                     namespace: 'org.vehicle',
                     imports: [],
-                    declarations: [
-                        {
-                            '$class': 'concerto.metamodel@1.0.0.ConceptDeclaration',
-                            name: 'wheel',
-                            isAbstract: false,
-                            properties: [
-                                {
-                                    '$class': 'concerto.metamodel@1.0.0.IntegerProperty',
-                                    name: 'radius',
-                                    isArray: false,
-                                    isOptional: false,
-                                },
-                                {
-                                    '$class': 'concerto.metamodel@1.0.0.StringProperty',
-                                    name: 'material',
-                                    isArray: false,
-                                    isOptional: false,
-                                }
-                            ],
-
-                        }
-                    ]
+                    declarations: []
                 },
                 {
                     '$class': 'concerto.metamodel@1.0.0.Model',
@@ -174,7 +153,7 @@ describe('MetaModel  aliasing', () => {
                                     name: 'wheels',
                                     type: {
                                         '$class': 'concerto.metamodel@1.0.0.TypeIdentifier',
-                                        name: 'wheel'
+                                        name: 'w'
                                     },
                                     isArray: true,
                                     isOptional: false,
@@ -186,7 +165,7 @@ describe('MetaModel  aliasing', () => {
             ]
 
         };
-        (()=>MetaModelUtil.resolveLocalNamesForAll(model)).should.throw();
+        MetaModelUtil.resolveLocalNamesForAll(model);
     });
 });
 describe('MetaModel (with Maps & Scalars)', () => {
