@@ -100,6 +100,74 @@ describe('MetaModel (Car)', () => {
     });
 });
 
+describe('MetaModel  aliasing', () => {
+
+    it('should convert a CTO model to its metamodel with name resolution', async () => {
+        const ModelPath = path.resolve(__dirname, './cto/aliasedImport.json');
+        const Model = JSON.parse(fs.readFileSync(ModelPath, 'utf8'));
+        const MetaModelResolved = JSON.parse(fs.readFileSync(path.resolve(__dirname, './cto/aliasedImportResolved.json'), 'utf8'));
+
+        const mm1r = MetaModelUtil.resolveLocalNamesForAll(Model);
+        mm1r.should.deep.equal(MetaModelResolved);
+    });
+
+    it('Should throw if name not found',async()=>{
+        const model = {
+            '$class': 'concerto.metamodel@1.0.0.Models',
+            'models': [
+                {
+                    '$class': 'concerto.metamodel@1.0.0.Model',
+                    decorators: [],
+                    namespace: 'org.vehicle',
+                    imports: [],
+                    declarations: []
+                },
+                {
+                    '$class': 'concerto.metamodel@1.0.0.Model',
+                    decorators: [],
+                    namespace: 'org.test',
+                    imports: [
+                        {
+                            '$class': 'concerto.metamodel@1.0.0.ImportTypes',
+                            namespace: 'org.vehicle',
+                            types: [
+                                'wheel'
+                            ],
+                            aliasedTypes: [
+                                {
+                                    '$class': 'concerto.metamodel@1.0.0.AliasedType',
+                                    name: 'wheel',
+                                    aliasedName: 'w'
+                                }
+                            ]
+                        }
+                    ],
+                    declarations: [
+                        {
+                            '$class': 'concerto.metamodel@1.0.0.ConceptDeclaration',
+                            name: 'car',
+                            isAbstract: false,
+                            properties: [
+                                {
+                                    '$class': 'concerto.metamodel@1.0.0.ObjectProperty',
+                                    name: 'wheels',
+                                    type: {
+                                        '$class': 'concerto.metamodel@1.0.0.TypeIdentifier',
+                                        name: 'w'
+                                    },
+                                    isArray: true,
+                                    isOptional: false,
+                                }
+                            ],
+                        }
+                    ]
+                }
+            ]
+
+        };
+        (()=>MetaModelUtil.resolveLocalNamesForAll(model)).should.throw();
+    });
+});
 describe('MetaModel (with Maps & Scalars)', () => {
     process.env.ENABLE_MAP_TYPE = 'true'; // TODO Remove on release of MapType
     const modelPath = path.resolve(__dirname, './cto/mapsImported.json');
@@ -182,6 +250,16 @@ describe('importFullyQualifiedNames', () => {
                 $class: 'concerto.metamodel@1.0.0.ImportTypes',
                 namespace: 'test',
                 types: ['Foo', 'Bar']
+            };
+            const result = MetaModelUtil.importFullyQualifiedNames(ast);
+            result.should.deep.equal(['test.Foo', 'test.Bar']);
+        });
+        it('should return imports when aliasing', async () => {
+            const ast = {
+                $class: 'concerto.metamodel@1.0.0.ImportTypes',
+                namespace: 'test',
+                types: ['Foo', 'Bar'],
+                aliasedTypes:{'f':'Foo','b':'Bar'}
             };
             const result = MetaModelUtil.importFullyQualifiedNames(ast);
             result.should.deep.equal(['test.Foo', 'test.Bar']);
