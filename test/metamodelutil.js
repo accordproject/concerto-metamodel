@@ -165,7 +165,7 @@ describe('MetaModel  aliasing', () => {
             ]
 
         };
-        MetaModelUtil.resolveLocalNamesForAll(model);
+        (()=>MetaModelUtil.resolveLocalNamesForAll(model)).should.throw();
     });
 });
 describe('MetaModel (with Maps & Scalars)', () => {
