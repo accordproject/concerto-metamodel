@@ -1,0 +1,16 @@
+namespace org.car@1.0.0
+
+import org.categories@1.0.0.{Engineering}
+
+concept Car {
+  o Part part
+}
+
+abstract concept Part {
+  @category(Engineering)
+  o String name 
+}
+
+concept Wheel extends Part {
+  o Double diameter
+}
