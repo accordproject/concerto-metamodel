@@ -100,6 +100,20 @@ describe('MetaModel (Car)', () => {
     });
 });
 
+describe('MetaModel (Decorators)', () => {
+    const decoratorsPath = path.resolve(__dirname, './cto/decorators.json');
+    const decoratorsModel = JSON.parse(fs.readFileSync(decoratorsPath, 'utf8'));
+    const decoratorsModelResolved = JSON.parse(fs.readFileSync(path.resolve(__dirname, './cto/decoratorsResolved.json'), 'utf8'));
+
+    describe('#toMetaModel', () => {
+        it('should convert a CTO model to its metamodel with name resolution', async () => {
+            const resolved = MetaModelUtil.resolveLocalNamesForAll(decoratorsModel);
+            resolved.should.deep.equal(decoratorsModelResolved);
+        });
+    });
+});
+
+
 describe('MetaModel  aliasing', () => {
 
     it('should convert a CTO model to its metamodel with name resolution', async () => {

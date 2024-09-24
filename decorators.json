@@ -1,0 +1,79 @@
+{
+  "$class": "concerto.metamodel@1.0.0.Model",
+  "decorators": [],
+  "namespace": "org.car@1.0.0",
+  "imports": [
+    {
+      "$class": "concerto.metamodel@1.0.0.ImportTypes",
+      "namespace": "org.categories@1.0.0",
+      "types": [
+        "Engineering"
+      ]
+    }
+  ],
+  "declarations": [
+    {
+      "$class": "concerto.metamodel@1.0.0.ConceptDeclaration",
+      "name": "Car",
+      "isAbstract": false,
+      "properties": [
+        {
+          "$class": "concerto.metamodel@1.0.0.ObjectProperty",
+          "name": "part",
+          "type": {
+            "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+            "name": "Part"
+          },
+          "isArray": false,
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "$class": "concerto.metamodel@1.0.0.ConceptDeclaration",
+      "name": "Part",
+      "isAbstract": true,
+      "properties": [
+        {
+          "$class": "concerto.metamodel@1.0.0.StringProperty",
+          "name": "name",
+          "isArray": false,
+          "isOptional": false,
+          "decorators": [
+            {
+              "$class": "concerto.metamodel@1.0.0.Decorator",
+              "name": "category",
+              "arguments": [
+                {
+                  "$class": "concerto.metamodel@1.0.0.DecoratorTypeReference",
+                  "type": {
+                    "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+                    "name": "Engineering"
+                  },
+                  "isArray": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$class": "concerto.metamodel@1.0.0.ConceptDeclaration",
+      "name": "Wheel",
+      "isAbstract": false,
+      "properties": [
+        {
+          "$class": "concerto.metamodel@1.0.0.DoubleProperty",
+          "name": "diameter",
+          "isArray": false,
+          "isOptional": false
+        }
+      ],
+      "superType": {
+        "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+        "name": "Part"
+      }
+    }
+  ]
+}

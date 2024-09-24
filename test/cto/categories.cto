@@ -1,0 +1,4 @@
+namespace org.categories@1.0.0
+
+abstract concept Category {}
+concept Engineering extends Category {}
