@@ -1,6 +1,6 @@
 {
   "name": "@accordproject/concerto-metamodel",
-  "version": "3.10.0",
+  "version": "3.10.1",
   "description": "Concerto metamodel utilities",
   "homepage": "https://github.com/accordproject/concerto",
   "engines": {
