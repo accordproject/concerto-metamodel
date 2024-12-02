@@ -1,3 +1,3 @@
 import MetaModelUtil = require("./lib/metamodelutil");
 export { MetaModelUtil };
-export declare const MetaModelNamespace: string;
+export declare let MetaModelNamespace: string;
