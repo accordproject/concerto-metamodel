@@ -16,39 +16,9 @@
                             "$class": "concerto.metamodel@1.0.0.StringProperty",
                             "name": "name",
                             "isArray": false,
-                            "isOptional": false,
-                            "location": {
-                                "$class": "concerto.metamodel@1.0.0.Range",
-                                "start": {
-                                    "offset": 35,
-                                    "line": 4,
-                                    "column": 2,
-                                    "$class": "concerto.metamodel@1.0.0.Position"
-                                },
-                                "end": {
-                                    "offset": 49,
-                                    "line": 5,
-                                    "column": 1,
-                                    "$class": "concerto.metamodel@1.0.0.Position"
-                                }
-                            }
+                            "isOptional": false
                         }
-                    ],
-                    "location": {
-                        "$class": "concerto.metamodel@1.0.0.Range",
-                        "start": {
-                            "offset": 22,
-                            "line": 3,
-                            "column": 1,
-                            "$class": "concerto.metamodel@1.0.0.Position"
-                        },
-                        "end": {
-                            "offset": 50,
-                            "line": 5,
-                            "column": 2,
-                            "$class": "concerto.metamodel@1.0.0.Position"
-                        }
-                    }
+                    ]
                 }
             ]
         },
@@ -78,24 +48,9 @@
                     "name": "file",
                     "isAbstract": false,
                     "properties": [],
-                    "location": {
-                        "$class": "concerto.metamodel@1.0.0.Range",
-                        "start": {
-                            "offset": 50,
-                            "line": 5,
-                            "column": 1,
-                            "$class": "concerto.metamodel@1.0.0.Position"
-                        },
-                        "end": {
-                            "offset": 75,
-                            "line": 6,
-                            "column": 2,
-                            "$class": "concerto.metamodel@1.0.0.Position"
-                        }
-                    },
                     "superType": {
                         "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
-                        "name": "d",
+                        "name": "doc",
                         "namespace": "org.saluja"
                     }
                 }
