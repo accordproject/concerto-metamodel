@@ -82,9 +82,14 @@ abstract concept MapValueType {
   o Range location optional
 }
 
+concept MapKeyCountValidator {
+  o Integer maxKeys
+}
+
 concept MapDeclaration extends Declaration {
   o MapKeyType key
   o MapValueType value
+  o MapKeyCountValidator maxKeysValidator optional
 }
 
 concept StringMapKeyType extends MapKeyType {}
