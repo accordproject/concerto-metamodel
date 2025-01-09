@@ -1,575 +1,588 @@
 {
-    "$class": "concerto.metamodel@1.0.0.Models",
-    "models": [
+  "$class": "concerto.metamodel@1.0.0.Models",
+  "models": [
+    {
+      "$class": "concerto.metamodel@1.0.0.Model",
+      "decorators": [],
+      "namespace": "com.testing.base@1.0.0",
+      "imports": [],
+      "declarations": [
         {
-            "$class": "concerto.metamodel@1.0.0.Model",
-            "decorators": [],
-            "namespace": "com.testing.base@1.0.0",
-            "imports": [],
-            "declarations": [
-                {
-                    "$class": "concerto.metamodel@1.0.0.StringScalar",
-                    "name": "Foo",
-                    "location": {
-                        "$class": "concerto.metamodel@1.0.0.Range",
-                        "start": {
-                            "offset": 592,
-                            "line": 16,
-                            "column": 1,
-                            "$class": "concerto.metamodel@1.0.0.Position"
-                        },
-                        "end": {
-                            "offset": 618,
-                            "line": 17,
-                            "column": 1,
-                            "$class": "concerto.metamodel@1.0.0.Position"
-                        }
-                    },
-                    "namespace": "com.testing.base@1.0.0"
-                },
-                {
-                    "$class": "concerto.metamodel@1.0.0.BooleanScalar",
-                    "name": "Bar",
-                    "location": {
-                        "$class": "concerto.metamodel@1.0.0.Range",
-                        "start": {
-                            "offset": 618,
-                            "line": 17,
-                            "column": 1,
-                            "$class": "concerto.metamodel@1.0.0.Position"
-                        },
-                        "end": {
-                            "offset": 645,
-                            "line": 18,
-                            "column": 1,
-                            "$class": "concerto.metamodel@1.0.0.Position"
-                        }
-                    },
-                    "namespace": "com.testing.base@1.0.0"
-                },
-                {
-                    "$class": "concerto.metamodel@1.0.0.DateTimeScalar",
-                    "defaultValue": null,
-                    "name": "Baz",
-                    "location": {
-                        "$class": "concerto.metamodel@1.0.0.Range",
-                        "start": {
-                            "offset": 645,
-                            "line": 18,
-                            "column": 1,
-                            "$class": "concerto.metamodel@1.0.0.Position"
-                        },
-                        "end": {
-                            "offset": 673,
-                            "line": 19,
-                            "column": 1,
-                            "$class": "concerto.metamodel@1.0.0.Position"
-                        }
-                    },
-                    "namespace": "com.testing.base@1.0.0"
-                },
-                {
-                    "$class": "concerto.metamodel@1.0.0.LongScalar",
-                    "name": "Bazola",
-                    "location": {
-                        "$class": "concerto.metamodel@1.0.0.Range",
-                        "start": {
-                            "offset": 673,
-                            "line": 19,
-                            "column": 1,
-                            "$class": "concerto.metamodel@1.0.0.Position"
-                        },
-                        "end": {
-                            "offset": 700,
-                            "line": 20,
-                            "column": 1,
-                            "$class": "concerto.metamodel@1.0.0.Position"
-                        }
-                    },
-                    "namespace": "com.testing.base@1.0.0"
-                },
-                {
-                    "$class": "concerto.metamodel@1.0.0.DoubleScalar",
-                    "name": "Bongo",
-                    "location": {
-                        "$class": "concerto.metamodel@1.0.0.Range",
-                        "start": {
-                            "offset": 700,
-                            "line": 20,
-                            "column": 1,
-                            "$class": "concerto.metamodel@1.0.0.Position"
-                        },
-                        "end": {
-                            "offset": 728,
-                            "line": 21,
-                            "column": 1,
-                            "$class": "concerto.metamodel@1.0.0.Position"
-                        }
-                    },
-                    "namespace": "com.testing.base@1.0.0"
-                },
-                {
-                    "$class": "concerto.metamodel@1.0.0.IntegerScalar",
-                    "name": "Qux",
-                    "location": {
-                        "$class": "concerto.metamodel@1.0.0.Range",
-                        "start": {
-                            "offset": 728,
-                            "line": 21,
-                            "column": 1,
-                            "$class": "concerto.metamodel@1.0.0.Position"
-                        },
-                        "end": {
-                            "offset": 754,
-                            "line": 21,
-                            "column": 27,
-                            "$class": "concerto.metamodel@1.0.0.Position"
-                        }
-                    },
-                    "namespace": "com.testing.base@1.0.0"
-                }
-            ]
+          "$class": "concerto.metamodel@1.0.0.StringScalar",
+          "name": "Foo",
+          "location": {
+            "$class": "concerto.metamodel@1.0.0.Range",
+            "start": {
+              "offset": 592,
+              "line": 16,
+              "column": 1,
+              "$class": "concerto.metamodel@1.0.0.Position"
+            },
+            "end": {
+              "offset": 618,
+              "line": 17,
+              "column": 1,
+              "$class": "concerto.metamodel@1.0.0.Position"
+            }
+          },
+          "namespace": "com.testing.base@1.0.0",
+          "resolvedName": "Foo"
         },
         {
-            "$class": "concerto.metamodel@1.0.0.Model",
-            "decorators": [],
-            "namespace": "com.testing@1.0.0",
-            "imports": [
-                {
-                    "$class": "concerto.metamodel@1.0.0.ImportTypes",
-                    "namespace": "com.testing.base@1.0.0",
-                    "types": [
-                        "Foo",
-                        "Bar",
-                        "Baz",
-                        "Bazola",
-                        "Bongo",
-                        "Qux"
-                    ]
-                }
-            ],
-            "declarations": [
-                {
-                    "$class": "concerto.metamodel@1.0.0.MapDeclaration",
-                    "name": "MapPermutation1",
-                    "key": {
-                        "$class": "concerto.metamodel@1.0.0.StringMapKeyType",
-                        "location": {
-                            "$class": "concerto.metamodel@1.0.0.Range",
-                            "start": {
-                                "offset": 678,
-                                "line": 19,
-                                "column": 3,
-                                "$class": "concerto.metamodel@1.0.0.Position"
-                            },
-                            "end": {
-                                "offset": 689,
-                                "line": 20,
-                                "column": 3,
-                                "$class": "concerto.metamodel@1.0.0.Position"
-                            }
-                        }
-                    },
-                    "value": {
-                        "$class": "concerto.metamodel@1.0.0.ObjectMapValueType",
-                        "type": {
-                            "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
-                            "name": "Foo",
-                            "namespace": "com.testing.base@1.0.0"
-                        },
-                        "location": {
-                            "$class": "concerto.metamodel@1.0.0.Range",
-                            "start": {
-                                "offset": 689,
-                                "line": 20,
-                                "column": 3,
-                                "$class": "concerto.metamodel@1.0.0.Position"
-                            },
-                            "end": {
-                                "offset": 695,
-                                "line": 21,
-                                "column": 1,
-                                "$class": "concerto.metamodel@1.0.0.Position"
-                            }
-                        }
-                    },
-                    "location": {
-                        "$class": "concerto.metamodel@1.0.0.Range",
-                        "start": {
-                            "offset": 654,
-                            "line": 18,
-                            "column": 1,
-                            "$class": "concerto.metamodel@1.0.0.Position"
-                        },
-                        "end": {
-                            "offset": 696,
-                            "line": 21,
-                            "column": 2,
-                            "$class": "concerto.metamodel@1.0.0.Position"
-                        }
-                    }
-                },
-                {
-                    "$class": "concerto.metamodel@1.0.0.MapDeclaration",
-                    "name": "MapPermutation2",
-                    "key": {
-                        "$class": "concerto.metamodel@1.0.0.StringMapKeyType",
-                        "location": {
-                            "$class": "concerto.metamodel@1.0.0.Range",
-                            "start": {
-                                "offset": 722,
-                                "line": 24,
-                                "column": 3,
-                                "$class": "concerto.metamodel@1.0.0.Position"
-                            },
-                            "end": {
-                                "offset": 733,
-                                "line": 25,
-                                "column": 3,
-                                "$class": "concerto.metamodel@1.0.0.Position"
-                            }
-                        }
-                    },
-                    "value": {
-                        "$class": "concerto.metamodel@1.0.0.ObjectMapValueType",
-                        "type": {
-                            "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
-                            "name": "Bar",
-                            "namespace": "com.testing.base@1.0.0"
-                        },
-                        "location": {
-                            "$class": "concerto.metamodel@1.0.0.Range",
-                            "start": {
-                                "offset": 733,
-                                "line": 25,
-                                "column": 3,
-                                "$class": "concerto.metamodel@1.0.0.Position"
-                            },
-                            "end": {
-                                "offset": 739,
-                                "line": 26,
-                                "column": 1,
-                                "$class": "concerto.metamodel@1.0.0.Position"
-                            }
-                        }
-                    },
-                    "location": {
-                        "$class": "concerto.metamodel@1.0.0.Range",
-                        "start": {
-                            "offset": 698,
-                            "line": 23,
-                            "column": 1,
-                            "$class": "concerto.metamodel@1.0.0.Position"
-                        },
-                        "end": {
-                            "offset": 740,
-                            "line": 26,
-                            "column": 2,
-                            "$class": "concerto.metamodel@1.0.0.Position"
-                        }
-                    }
-                },
-                {
-                    "$class": "concerto.metamodel@1.0.0.MapDeclaration",
-                    "name": "MapPermutation3",
-                    "key": {
-                        "$class": "concerto.metamodel@1.0.0.StringMapKeyType",
-                        "location": {
-                            "$class": "concerto.metamodel@1.0.0.Range",
-                            "start": {
-                                "offset": 766,
-                                "line": 29,
-                                "column": 3,
-                                "$class": "concerto.metamodel@1.0.0.Position"
-                            },
-                            "end": {
-                                "offset": 777,
-                                "line": 30,
-                                "column": 3,
-                                "$class": "concerto.metamodel@1.0.0.Position"
-                            }
-                        }
-                    },
-                    "value": {
-                        "$class": "concerto.metamodel@1.0.0.ObjectMapValueType",
-                        "type": {
-                            "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
-                            "name": "Baz",
-                            "namespace": "com.testing.base@1.0.0"
-                        },
-                        "location": {
-                            "$class": "concerto.metamodel@1.0.0.Range",
-                            "start": {
-                                "offset": 777,
-                                "line": 30,
-                                "column": 3,
-                                "$class": "concerto.metamodel@1.0.0.Position"
-                            },
-                            "end": {
-                                "offset": 783,
-                                "line": 31,
-                                "column": 1,
-                                "$class": "concerto.metamodel@1.0.0.Position"
-                            }
-                        }
-                    },
-                    "location": {
-                        "$class": "concerto.metamodel@1.0.0.Range",
-                        "start": {
-                            "offset": 742,
-                            "line": 28,
-                            "column": 1,
-                            "$class": "concerto.metamodel@1.0.0.Position"
-                        },
-                        "end": {
-                            "offset": 784,
-                            "line": 31,
-                            "column": 2,
-                            "$class": "concerto.metamodel@1.0.0.Position"
-                        }
-                    }
-                },
-                {
-                    "$class": "concerto.metamodel@1.0.0.MapDeclaration",
-                    "name": "MapPermutation4",
-                    "key": {
-                        "$class": "concerto.metamodel@1.0.0.StringMapKeyType",
-                        "location": {
-                            "$class": "concerto.metamodel@1.0.0.Range",
-                            "start": {
-                                "offset": 810,
-                                "line": 34,
-                                "column": 3,
-                                "$class": "concerto.metamodel@1.0.0.Position"
-                            },
-                            "end": {
-                                "offset": 821,
-                                "line": 35,
-                                "column": 3,
-                                "$class": "concerto.metamodel@1.0.0.Position"
-                            }
-                        }
-                    },
-                    "value": {
-                        "$class": "concerto.metamodel@1.0.0.ObjectMapValueType",
-                        "type": {
-                            "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
-                            "name": "Bazola",
-                            "namespace": "com.testing.base@1.0.0"
-                        },
-                        "location": {
-                            "$class": "concerto.metamodel@1.0.0.Range",
-                            "start": {
-                                "offset": 821,
-                                "line": 35,
-                                "column": 3,
-                                "$class": "concerto.metamodel@1.0.0.Position"
-                            },
-                            "end": {
-                                "offset": 830,
-                                "line": 36,
-                                "column": 1,
-                                "$class": "concerto.metamodel@1.0.0.Position"
-                            }
-                        }
-                    },
-                    "location": {
-                        "$class": "concerto.metamodel@1.0.0.Range",
-                        "start": {
-                            "offset": 786,
-                            "line": 33,
-                            "column": 1,
-                            "$class": "concerto.metamodel@1.0.0.Position"
-                        },
-                        "end": {
-                            "offset": 831,
-                            "line": 36,
-                            "column": 2,
-                            "$class": "concerto.metamodel@1.0.0.Position"
-                        }
-                    }
-                },
-                {
-                    "$class": "concerto.metamodel@1.0.0.MapDeclaration",
-                    "name": "MapPermutation5",
-                    "key": {
-                        "$class": "concerto.metamodel@1.0.0.StringMapKeyType",
-                        "location": {
-                            "$class": "concerto.metamodel@1.0.0.Range",
-                            "start": {
-                                "offset": 857,
-                                "line": 39,
-                                "column": 3,
-                                "$class": "concerto.metamodel@1.0.0.Position"
-                            },
-                            "end": {
-                                "offset": 868,
-                                "line": 40,
-                                "column": 3,
-                                "$class": "concerto.metamodel@1.0.0.Position"
-                            }
-                        }
-                    },
-                    "value": {
-                        "$class": "concerto.metamodel@1.0.0.ObjectMapValueType",
-                        "type": {
-                            "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
-                            "name": "Bongo",
-                            "namespace": "com.testing.base@1.0.0"
-                        },
-                        "location": {
-                            "$class": "concerto.metamodel@1.0.0.Range",
-                            "start": {
-                                "offset": 868,
-                                "line": 40,
-                                "column": 3,
-                                "$class": "concerto.metamodel@1.0.0.Position"
-                            },
-                            "end": {
-                                "offset": 876,
-                                "line": 41,
-                                "column": 1,
-                                "$class": "concerto.metamodel@1.0.0.Position"
-                            }
-                        }
-                    },
-                    "location": {
-                        "$class": "concerto.metamodel@1.0.0.Range",
-                        "start": {
-                            "offset": 833,
-                            "line": 38,
-                            "column": 1,
-                            "$class": "concerto.metamodel@1.0.0.Position"
-                        },
-                        "end": {
-                            "offset": 877,
-                            "line": 41,
-                            "column": 2,
-                            "$class": "concerto.metamodel@1.0.0.Position"
-                        }
-                    }
-                },
-                {
-                    "$class": "concerto.metamodel@1.0.0.MapDeclaration",
-                    "name": "MapPermutation6",
-                    "key": {
-                        "$class": "concerto.metamodel@1.0.0.StringMapKeyType",
-                        "location": {
-                            "$class": "concerto.metamodel@1.0.0.Range",
-                            "start": {
-                                "offset": 903,
-                                "line": 44,
-                                "column": 3,
-                                "$class": "concerto.metamodel@1.0.0.Position"
-                            },
-                            "end": {
-                                "offset": 914,
-                                "line": 45,
-                                "column": 3,
-                                "$class": "concerto.metamodel@1.0.0.Position"
-                            }
-                        }
-                    },
-                    "value": {
-                        "$class": "concerto.metamodel@1.0.0.ObjectMapValueType",
-                        "type": {
-                            "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
-                            "name": "Qux",
-                            "namespace": "com.testing.base@1.0.0"
-                        },
-                        "location": {
-                            "$class": "concerto.metamodel@1.0.0.Range",
-                            "start": {
-                                "offset": 914,
-                                "line": 45,
-                                "column": 3,
-                                "$class": "concerto.metamodel@1.0.0.Position"
-                            },
-                            "end": {
-                                "offset": 920,
-                                "line": 46,
-                                "column": 1,
-                                "$class": "concerto.metamodel@1.0.0.Position"
-                            }
-                        }
-                    },
-                    "location": {
-                        "$class": "concerto.metamodel@1.0.0.Range",
-                        "start": {
-                            "offset": 879,
-                            "line": 43,
-                            "column": 1,
-                            "$class": "concerto.metamodel@1.0.0.Position"
-                        },
-                        "end": {
-                            "offset": 921,
-                            "line": 46,
-                            "column": 2,
-                            "$class": "concerto.metamodel@1.0.0.Position"
-                        }
-                    }
-                },
-                {
-                    "$class": "concerto.metamodel@1.0.0.MapDeclaration",
-                    "name": "MapPermutation7",
-                    "key": {
-                        "$class": "concerto.metamodel@1.0.0.ObjectMapKeyType",
-                        "type": {
-                            "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
-                            "name": "Qux",
-                            "namespace": "com.testing.base@1.0.0"
-                        },
-                        "location": {
-                            "$class": "concerto.metamodel@1.0.0.Range",
-                            "start": {
-                                "offset": 947,
-                                "line": 49,
-                                "column": 3,
-                                "$class": "concerto.metamodel@1.0.0.Position"
-                            },
-                            "end": {
-                                "offset": 955,
-                                "line": 50,
-                                "column": 3,
-                                "$class": "concerto.metamodel@1.0.0.Position"
-                            }
-                        }
-                    },
-                    "value": {
-                        "$class": "concerto.metamodel@1.0.0.StringMapValueType",
-                        "location": {
-                            "$class": "concerto.metamodel@1.0.0.Range",
-                            "start": {
-                                "offset": 955,
-                                "line": 50,
-                                "column": 3,
-                                "$class": "concerto.metamodel@1.0.0.Position"
-                            },
-                            "end": {
-                                "offset": 964,
-                                "line": 51,
-                                "column": 1,
-                                "$class": "concerto.metamodel@1.0.0.Position"
-                            }
-                        }
-                    },
-                    "location": {
-                        "$class": "concerto.metamodel@1.0.0.Range",
-                        "start": {
-                            "offset": 923,
-                            "line": 48,
-                            "column": 1,
-                            "$class": "concerto.metamodel@1.0.0.Position"
-                        },
-                        "end": {
-                            "offset": 965,
-                            "line": 51,
-                            "column": 2,
-                            "$class": "concerto.metamodel@1.0.0.Position"
-                        }
-                    }
-                }
-            ]
+          "$class": "concerto.metamodel@1.0.0.BooleanScalar",
+          "name": "Bar",
+          "location": {
+            "$class": "concerto.metamodel@1.0.0.Range",
+            "start": {
+              "offset": 618,
+              "line": 17,
+              "column": 1,
+              "$class": "concerto.metamodel@1.0.0.Position"
+            },
+            "end": {
+              "offset": 645,
+              "line": 18,
+              "column": 1,
+              "$class": "concerto.metamodel@1.0.0.Position"
+            }
+          },
+          "namespace": "com.testing.base@1.0.0",
+          "resolvedName": "Bar"
+        },
+        {
+          "$class": "concerto.metamodel@1.0.0.DateTimeScalar",
+          "defaultValue": null,
+          "name": "Baz",
+          "location": {
+            "$class": "concerto.metamodel@1.0.0.Range",
+            "start": {
+              "offset": 645,
+              "line": 18,
+              "column": 1,
+              "$class": "concerto.metamodel@1.0.0.Position"
+            },
+            "end": {
+              "offset": 673,
+              "line": 19,
+              "column": 1,
+              "$class": "concerto.metamodel@1.0.0.Position"
+            }
+          },
+          "namespace": "com.testing.base@1.0.0",
+          "resolvedName": "Baz"
+        },
+        {
+          "$class": "concerto.metamodel@1.0.0.LongScalar",
+          "name": "Bazola",
+          "location": {
+            "$class": "concerto.metamodel@1.0.0.Range",
+            "start": {
+              "offset": 673,
+              "line": 19,
+              "column": 1,
+              "$class": "concerto.metamodel@1.0.0.Position"
+            },
+            "end": {
+              "offset": 700,
+              "line": 20,
+              "column": 1,
+              "$class": "concerto.metamodel@1.0.0.Position"
+            }
+          },
+          "namespace": "com.testing.base@1.0.0",
+          "resolvedName": "Bazola"
+        },
+        {
+          "$class": "concerto.metamodel@1.0.0.DoubleScalar",
+          "name": "Bongo",
+          "location": {
+            "$class": "concerto.metamodel@1.0.0.Range",
+            "start": {
+              "offset": 700,
+              "line": 20,
+              "column": 1,
+              "$class": "concerto.metamodel@1.0.0.Position"
+            },
+            "end": {
+              "offset": 728,
+              "line": 21,
+              "column": 1,
+              "$class": "concerto.metamodel@1.0.0.Position"
+            }
+          },
+          "namespace": "com.testing.base@1.0.0",
+          "resolvedName": "Bongo"
+        },
+        {
+          "$class": "concerto.metamodel@1.0.0.IntegerScalar",
+          "name": "Qux",
+          "location": {
+            "$class": "concerto.metamodel@1.0.0.Range",
+            "start": {
+              "offset": 728,
+              "line": 21,
+              "column": 1,
+              "$class": "concerto.metamodel@1.0.0.Position"
+            },
+            "end": {
+              "offset": 754,
+              "line": 21,
+              "column": 27,
+              "$class": "concerto.metamodel@1.0.0.Position"
+            }
+          },
+          "namespace": "com.testing.base@1.0.0",
+          "resolvedName": "Qux"
         }
-    ]
+      ]
+    },
+    {
+      "$class": "concerto.metamodel@1.0.0.Model",
+      "decorators": [],
+      "namespace": "com.testing@1.0.0",
+      "imports": [
+        {
+          "$class": "concerto.metamodel@1.0.0.ImportTypes",
+          "namespace": "com.testing.base@1.0.0",
+          "types": [
+            "Foo",
+            "Bar",
+            "Baz",
+            "Bazola",
+            "Bongo",
+            "Qux"
+          ]
+        }
+      ],
+      "declarations": [
+        {
+          "$class": "concerto.metamodel@1.0.0.MapDeclaration",
+          "name": "MapPermutation1",
+          "key": {
+            "$class": "concerto.metamodel@1.0.0.StringMapKeyType",
+            "location": {
+              "$class": "concerto.metamodel@1.0.0.Range",
+              "start": {
+                "offset": 678,
+                "line": 19,
+                "column": 3,
+                "$class": "concerto.metamodel@1.0.0.Position"
+              },
+              "end": {
+                "offset": 689,
+                "line": 20,
+                "column": 3,
+                "$class": "concerto.metamodel@1.0.0.Position"
+              }
+            }
+          },
+          "value": {
+            "$class": "concerto.metamodel@1.0.0.ObjectMapValueType",
+            "type": {
+              "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+              "name": "Foo",
+              "namespace": "com.testing.base@1.0.0",
+              "resolvedName": "Foo"
+            },
+            "location": {
+              "$class": "concerto.metamodel@1.0.0.Range",
+              "start": {
+                "offset": 689,
+                "line": 20,
+                "column": 3,
+                "$class": "concerto.metamodel@1.0.0.Position"
+              },
+              "end": {
+                "offset": 695,
+                "line": 21,
+                "column": 1,
+                "$class": "concerto.metamodel@1.0.0.Position"
+              }
+            }
+          },
+          "location": {
+            "$class": "concerto.metamodel@1.0.0.Range",
+            "start": {
+              "offset": 654,
+              "line": 18,
+              "column": 1,
+              "$class": "concerto.metamodel@1.0.0.Position"
+            },
+            "end": {
+              "offset": 696,
+              "line": 21,
+              "column": 2,
+              "$class": "concerto.metamodel@1.0.0.Position"
+            }
+          }
+        },
+        {
+          "$class": "concerto.metamodel@1.0.0.MapDeclaration",
+          "name": "MapPermutation2",
+          "key": {
+            "$class": "concerto.metamodel@1.0.0.StringMapKeyType",
+            "location": {
+              "$class": "concerto.metamodel@1.0.0.Range",
+              "start": {
+                "offset": 722,
+                "line": 24,
+                "column": 3,
+                "$class": "concerto.metamodel@1.0.0.Position"
+              },
+              "end": {
+                "offset": 733,
+                "line": 25,
+                "column": 3,
+                "$class": "concerto.metamodel@1.0.0.Position"
+              }
+            }
+          },
+          "value": {
+            "$class": "concerto.metamodel@1.0.0.ObjectMapValueType",
+            "type": {
+              "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+              "name": "Bar",
+              "namespace": "com.testing.base@1.0.0",
+              "resolvedName": "Bar"
+            },
+            "location": {
+              "$class": "concerto.metamodel@1.0.0.Range",
+              "start": {
+                "offset": 733,
+                "line": 25,
+                "column": 3,
+                "$class": "concerto.metamodel@1.0.0.Position"
+              },
+              "end": {
+                "offset": 739,
+                "line": 26,
+                "column": 1,
+                "$class": "concerto.metamodel@1.0.0.Position"
+              }
+            }
+          },
+          "location": {
+            "$class": "concerto.metamodel@1.0.0.Range",
+            "start": {
+              "offset": 698,
+              "line": 23,
+              "column": 1,
+              "$class": "concerto.metamodel@1.0.0.Position"
+            },
+            "end": {
+              "offset": 740,
+              "line": 26,
+              "column": 2,
+              "$class": "concerto.metamodel@1.0.0.Position"
+            }
+          }
+        },
+        {
+          "$class": "concerto.metamodel@1.0.0.MapDeclaration",
+          "name": "MapPermutation3",
+          "key": {
+            "$class": "concerto.metamodel@1.0.0.StringMapKeyType",
+            "location": {
+              "$class": "concerto.metamodel@1.0.0.Range",
+              "start": {
+                "offset": 766,
+                "line": 29,
+                "column": 3,
+                "$class": "concerto.metamodel@1.0.0.Position"
+              },
+              "end": {
+                "offset": 777,
+                "line": 30,
+                "column": 3,
+                "$class": "concerto.metamodel@1.0.0.Position"
+              }
+            }
+          },
+          "value": {
+            "$class": "concerto.metamodel@1.0.0.ObjectMapValueType",
+            "type": {
+              "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+              "name": "Baz",
+              "namespace": "com.testing.base@1.0.0",
+              "resolvedName": "Baz"
+            },
+            "location": {
+              "$class": "concerto.metamodel@1.0.0.Range",
+              "start": {
+                "offset": 777,
+                "line": 30,
+                "column": 3,
+                "$class": "concerto.metamodel@1.0.0.Position"
+              },
+              "end": {
+                "offset": 783,
+                "line": 31,
+                "column": 1,
+                "$class": "concerto.metamodel@1.0.0.Position"
+              }
+            }
+          },
+          "location": {
+            "$class": "concerto.metamodel@1.0.0.Range",
+            "start": {
+              "offset": 742,
+              "line": 28,
+              "column": 1,
+              "$class": "concerto.metamodel@1.0.0.Position"
+            },
+            "end": {
+              "offset": 784,
+              "line": 31,
+              "column": 2,
+              "$class": "concerto.metamodel@1.0.0.Position"
+            }
+          }
+        },
+        {
+          "$class": "concerto.metamodel@1.0.0.MapDeclaration",
+          "name": "MapPermutation4",
+          "key": {
+            "$class": "concerto.metamodel@1.0.0.StringMapKeyType",
+            "location": {
+              "$class": "concerto.metamodel@1.0.0.Range",
+              "start": {
+                "offset": 810,
+                "line": 34,
+                "column": 3,
+                "$class": "concerto.metamodel@1.0.0.Position"
+              },
+              "end": {
+                "offset": 821,
+                "line": 35,
+                "column": 3,
+                "$class": "concerto.metamodel@1.0.0.Position"
+              }
+            }
+          },
+          "value": {
+            "$class": "concerto.metamodel@1.0.0.ObjectMapValueType",
+            "type": {
+              "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+              "name": "Bazola",
+              "namespace": "com.testing.base@1.0.0",
+              "resolvedName": "Bazola"
+            },
+            "location": {
+              "$class": "concerto.metamodel@1.0.0.Range",
+              "start": {
+                "offset": 821,
+                "line": 35,
+                "column": 3,
+                "$class": "concerto.metamodel@1.0.0.Position"
+              },
+              "end": {
+                "offset": 830,
+                "line": 36,
+                "column": 1,
+                "$class": "concerto.metamodel@1.0.0.Position"
+              }
+            }
+          },
+          "location": {
+            "$class": "concerto.metamodel@1.0.0.Range",
+            "start": {
+              "offset": 786,
+              "line": 33,
+              "column": 1,
+              "$class": "concerto.metamodel@1.0.0.Position"
+            },
+            "end": {
+              "offset": 831,
+              "line": 36,
+              "column": 2,
+              "$class": "concerto.metamodel@1.0.0.Position"
+            }
+          }
+        },
+        {
+          "$class": "concerto.metamodel@1.0.0.MapDeclaration",
+          "name": "MapPermutation5",
+          "key": {
+            "$class": "concerto.metamodel@1.0.0.StringMapKeyType",
+            "location": {
+              "$class": "concerto.metamodel@1.0.0.Range",
+              "start": {
+                "offset": 857,
+                "line": 39,
+                "column": 3,
+                "$class": "concerto.metamodel@1.0.0.Position"
+              },
+              "end": {
+                "offset": 868,
+                "line": 40,
+                "column": 3,
+                "$class": "concerto.metamodel@1.0.0.Position"
+              }
+            }
+          },
+          "value": {
+            "$class": "concerto.metamodel@1.0.0.ObjectMapValueType",
+            "type": {
+              "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+              "name": "Bongo",
+              "namespace": "com.testing.base@1.0.0",
+              "resolvedName": "Bongo"
+            },
+            "location": {
+              "$class": "concerto.metamodel@1.0.0.Range",
+              "start": {
+                "offset": 868,
+                "line": 40,
+                "column": 3,
+                "$class": "concerto.metamodel@1.0.0.Position"
+              },
+              "end": {
+                "offset": 876,
+                "line": 41,
+                "column": 1,
+                "$class": "concerto.metamodel@1.0.0.Position"
+              }
+            }
+          },
+          "location": {
+            "$class": "concerto.metamodel@1.0.0.Range",
+            "start": {
+              "offset": 833,
+              "line": 38,
+              "column": 1,
+              "$class": "concerto.metamodel@1.0.0.Position"
+            },
+            "end": {
+              "offset": 877,
+              "line": 41,
+              "column": 2,
+              "$class": "concerto.metamodel@1.0.0.Position"
+            }
+          }
+        },
+        {
+          "$class": "concerto.metamodel@1.0.0.MapDeclaration",
+          "name": "MapPermutation6",
+          "key": {
+            "$class": "concerto.metamodel@1.0.0.StringMapKeyType",
+            "location": {
+              "$class": "concerto.metamodel@1.0.0.Range",
+              "start": {
+                "offset": 903,
+                "line": 44,
+                "column": 3,
+                "$class": "concerto.metamodel@1.0.0.Position"
+              },
+              "end": {
+                "offset": 914,
+                "line": 45,
+                "column": 3,
+                "$class": "concerto.metamodel@1.0.0.Position"
+              }
+            }
+          },
+          "value": {
+            "$class": "concerto.metamodel@1.0.0.ObjectMapValueType",
+            "type": {
+              "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+              "name": "Qux",
+              "namespace": "com.testing.base@1.0.0",
+              "resolvedName": "Qux"
+            },
+            "location": {
+              "$class": "concerto.metamodel@1.0.0.Range",
+              "start": {
+                "offset": 914,
+                "line": 45,
+                "column": 3,
+                "$class": "concerto.metamodel@1.0.0.Position"
+              },
+              "end": {
+                "offset": 920,
+                "line": 46,
+                "column": 1,
+                "$class": "concerto.metamodel@1.0.0.Position"
+              }
+            }
+          },
+          "location": {
+            "$class": "concerto.metamodel@1.0.0.Range",
+            "start": {
+              "offset": 879,
+              "line": 43,
+              "column": 1,
+              "$class": "concerto.metamodel@1.0.0.Position"
+            },
+            "end": {
+              "offset": 921,
+              "line": 46,
+              "column": 2,
+              "$class": "concerto.metamodel@1.0.0.Position"
+            }
+          }
+        },
+        {
+          "$class": "concerto.metamodel@1.0.0.MapDeclaration",
+          "name": "MapPermutation7",
+          "key": {
+            "$class": "concerto.metamodel@1.0.0.ObjectMapKeyType",
+            "type": {
+              "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+              "name": "Qux",
+              "namespace": "com.testing.base@1.0.0",
+              "resolvedName": "Qux"
+            },
+            "location": {
+              "$class": "concerto.metamodel@1.0.0.Range",
+              "start": {
+                "offset": 947,
+                "line": 49,
+                "column": 3,
+                "$class": "concerto.metamodel@1.0.0.Position"
+              },
+              "end": {
+                "offset": 955,
+                "line": 50,
+                "column": 3,
+                "$class": "concerto.metamodel@1.0.0.Position"
+              }
+            }
+          },
+          "value": {
+            "$class": "concerto.metamodel@1.0.0.StringMapValueType",
+            "location": {
+              "$class": "concerto.metamodel@1.0.0.Range",
+              "start": {
+                "offset": 955,
+                "line": 50,
+                "column": 3,
+                "$class": "concerto.metamodel@1.0.0.Position"
+              },
+              "end": {
+                "offset": 964,
+                "line": 51,
+                "column": 1,
+                "$class": "concerto.metamodel@1.0.0.Position"
+              }
+            }
+          },
+          "location": {
+            "$class": "concerto.metamodel@1.0.0.Range",
+            "start": {
+              "offset": 923,
+              "line": 48,
+              "column": 1,
+              "$class": "concerto.metamodel@1.0.0.Position"
+            },
+            "end": {
+              "offset": 965,
+              "line": 51,
+              "column": 2,
+              "$class": "concerto.metamodel@1.0.0.Position"
+            }
+          }
+        }
+      ]
+    }
+  ]
 }

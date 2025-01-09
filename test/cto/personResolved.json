@@ -85,7 +85,8 @@
           "type": {
             "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
             "name": "Address",
-            "namespace": "test.person"
+            "namespace": "test.person",
+            "resolvedName": "Address"
           },
           "isArray": false,
           "isOptional": false
@@ -96,7 +97,8 @@
           "type": {
             "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
             "name": "Address",
-            "namespace": "test.person"
+            "namespace": "test.person",
+            "resolvedName": "Address"
           },
           "isArray": false,
           "isOptional": false,
@@ -108,7 +110,8 @@
           "type": {
             "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
             "name": "Address",
-            "namespace": "test.person"
+            "namespace": "test.person",
+            "resolvedName": "Address"
           },
           "isArray": false,
           "isOptional": false,
@@ -131,7 +134,8 @@
           "type": {
             "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
             "name": "Address",
-            "namespace": "test.person"
+            "namespace": "test.person",
+            "resolvedName": "Address"
           },
           "isArray": true,
           "isOptional": false
@@ -142,7 +146,8 @@
           "type": {
             "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
             "name": "Address",
-            "namespace": "test.person"
+            "namespace": "test.person",
+            "resolvedName": "Address"
           },
           "isArray": false,
           "isOptional": true
@@ -153,7 +158,8 @@
           "type": {
             "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
             "name": "Gender",
-            "namespace": "test.person"
+            "namespace": "test.person",
+            "resolvedName": "Gender"
           },
           "isArray": false,
           "isOptional": false
@@ -168,7 +174,8 @@
       "superType": {
         "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
         "name": "Individual",
-        "namespace": "test.person"
+        "namespace": "test.person",
+        "resolvedName": "Individual"
       }
     },
     {
@@ -192,7 +199,8 @@
       "superType": {
         "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
         "name": "Person",
-        "namespace": "test.person"
+        "namespace": "test.person",
+        "resolvedName": "Person"
       }
     },
     {
@@ -403,7 +411,8 @@
       "superType": {
         "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
         "name": "Address",
-        "namespace": "test.person"
+        "namespace": "test.person",
+        "resolvedName": "Address"
       },
       "decorators": [
         {
@@ -439,7 +448,8 @@
               "type": {
                 "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
                 "name": "Gender",
-                "namespace": "test.person"
+                "namespace": "test.person",
+                "resolvedName": "Gender"
               },
               "isArray": false
             },
@@ -448,7 +458,8 @@
               "type": {
                 "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
                 "name": "TemporalUnit",
-                "namespace": "org.accordproject.time"
+                "namespace": "org.accordproject.time",
+                "resolvedName": "TemporalUnit"
               },
               "isArray": true
             }
@@ -494,7 +505,8 @@
           "type": {
             "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
             "name": "TemporalUnit",
-            "namespace": "org.accordproject.time"
+            "namespace": "org.accordproject.time",
+            "resolvedName": "TemporalUnit"
           },
           "isArray": false,
           "isOptional": false
@@ -505,7 +517,8 @@
           "type": {
             "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
             "name": "Month",
-            "namespace": "org.accordproject.time"
+            "namespace": "org.accordproject.time",
+            "resolvedName": "Month"
           },
           "isArray": false,
           "isOptional": false
@@ -516,7 +529,8 @@
           "type": {
             "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
             "name": "Participant",
-            "namespace": "concerto@1.0.0"
+            "namespace": "concerto@1.0.0",
+            "resolvedName": "Participant"
           },
           "isArray": false,
           "isOptional": false
