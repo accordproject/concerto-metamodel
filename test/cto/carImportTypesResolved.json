@@ -94,8 +94,7 @@
           "superType": {
             "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
             "name": "Manufactured",
-            "namespace": "org.vehicle",
-            "resolvedName": "Manufactured"
+            "namespace": "org.vehicle"
           }
         }
       ]

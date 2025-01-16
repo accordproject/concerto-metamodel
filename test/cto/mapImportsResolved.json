@@ -25,8 +25,7 @@
               "$class": "concerto.metamodel@1.0.0.Position"
             }
           },
-          "namespace": "com.testing.base@1.0.0",
-          "resolvedName": "Foo"
+          "namespace": "com.testing.base@1.0.0"
         },
         {
           "$class": "concerto.metamodel@1.0.0.BooleanScalar",
@@ -46,8 +45,7 @@
               "$class": "concerto.metamodel@1.0.0.Position"
             }
           },
-          "namespace": "com.testing.base@1.0.0",
-          "resolvedName": "Bar"
+          "namespace": "com.testing.base@1.0.0"
         },
         {
           "$class": "concerto.metamodel@1.0.0.DateTimeScalar",
@@ -68,8 +66,7 @@
               "$class": "concerto.metamodel@1.0.0.Position"
             }
           },
-          "namespace": "com.testing.base@1.0.0",
-          "resolvedName": "Baz"
+          "namespace": "com.testing.base@1.0.0"
         },
         {
           "$class": "concerto.metamodel@1.0.0.LongScalar",
@@ -89,8 +86,7 @@
               "$class": "concerto.metamodel@1.0.0.Position"
             }
           },
-          "namespace": "com.testing.base@1.0.0",
-          "resolvedName": "Bazola"
+          "namespace": "com.testing.base@1.0.0"
         },
         {
           "$class": "concerto.metamodel@1.0.0.DoubleScalar",
@@ -110,8 +106,7 @@
               "$class": "concerto.metamodel@1.0.0.Position"
             }
           },
-          "namespace": "com.testing.base@1.0.0",
-          "resolvedName": "Bongo"
+          "namespace": "com.testing.base@1.0.0"
         },
         {
           "$class": "concerto.metamodel@1.0.0.IntegerScalar",
@@ -131,8 +126,7 @@
               "$class": "concerto.metamodel@1.0.0.Position"
             }
           },
-          "namespace": "com.testing.base@1.0.0",
-          "resolvedName": "Qux"
+          "namespace": "com.testing.base@1.0.0"
         }
       ]
     },

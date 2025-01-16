@@ -21,8 +21,7 @@
           "superType": {
             "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
             "name": "Category",
-            "namespace": "org.categories@1.0.0",
-            "resolvedName": "Category"
+            "namespace": "org.categories@1.0.0"
           }
         }
       ]
@@ -52,8 +51,7 @@
               "type": {
                 "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
                 "name": "Part",
-                "namespace": "org.car@1.0.0",
-                "resolvedName": "Part"
+                "namespace": "org.car@1.0.0"
               },
               "isArray": false,
               "isOptional": false
@@ -106,8 +104,7 @@
           "superType": {
             "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
             "name": "Part",
-            "namespace": "org.car@1.0.0",
-            "resolvedName": "Part"
+            "namespace": "org.car@1.0.0"
           }
         }
       ]

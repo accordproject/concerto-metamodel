@@ -94,8 +94,7 @@
           "superType": {
             "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
             "name": "Manufactured",
-            "namespace": "org.vehicle",
-            "resolvedName": "Manufactured"
+            "namespace": "org.vehicle"
           }
         }
       ]
@@ -115,8 +114,7 @@
           "$class": "concerto.metamodel@1.0.0.DateTimeScalar",
           "defaultValue": null,
           "name": "DateServiced",
-          "namespace": "org.car",
-          "resolvedName": "DateServiced"
+          "namespace": "org.car"
         },
         {
           "$class": "concerto.metamodel@1.0.0.MapDeclaration",
@@ -126,8 +124,7 @@
             "type": {
               "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
               "name": "DateServiced",
-              "namespace": "org.car",
-              "resolvedName": "DateServiced"
+              "namespace": "org.car"
             }
           },
           "value": {
@@ -135,8 +132,7 @@
             "type": {
               "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
               "name": "Concept",
-              "namespace": "concerto@1.0.0",
-              "resolvedName": "Concept"
+              "namespace": "concerto@1.0.0"
             }
           }
         },
@@ -185,8 +181,7 @@
           "superType": {
             "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
             "name": "Vehicle",
-            "namespace": "org.vehicle",
-            "resolvedName": "Vehicle"
+            "namespace": "org.vehicle"
           }
         }
       ]
