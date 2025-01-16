@@ -78,8 +78,7 @@
                       "type": {
                         "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
                         "name": "Engineering",
-                        "namespace": "org.categories@1.0.0",
-                        "resolvedName": "Engineering"
+                        "namespace": "org.categories@1.0.0"
                       },
                       "isArray": false
                     }
