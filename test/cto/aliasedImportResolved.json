@@ -50,8 +50,9 @@
                     "properties": [],
                     "superType": {
                         "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
-                        "name": "doc",
-                        "namespace": "org.saluja"
+                        "name": "d",
+                        "namespace": "org.saluja",
+                        "resolvedName": "doc"
                     }
                 }
             ]
