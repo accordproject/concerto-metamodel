@@ -1,61 +1,61 @@
 {
-  "$class": "concerto.metamodel@1.0.0.Models",
-  "models": [
-    {
-      "$class": "concerto.metamodel@1.0.0.Model",
-      "decorators": [],
-      "namespace": "org.saluja",
-      "imports": [],
-      "declarations": [
+    "$class": "concerto.metamodel@1.0.0.Models",
+    "models": [
         {
-          "$class": "concerto.metamodel@1.0.0.ConceptDeclaration",
-          "name": "doc",
-          "isAbstract": false,
-          "properties": [
-            {
-              "$class": "concerto.metamodel@1.0.0.StringProperty",
-              "name": "name",
-              "isArray": false,
-              "isOptional": false
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "$class": "concerto.metamodel@1.0.0.Model",
-      "decorators": [],
-      "namespace": "org.test",
-      "imports": [
-        {
-          "$class": "concerto.metamodel@1.0.0.ImportTypes",
-          "namespace": "org.saluja",
-          "types": [
-            "doc"
-          ],
-          "aliasedTypes": [
-            {
-              "$class": "concerto.metamodel@1.0.0.AliasedType",
-              "name": "doc",
-              "aliasedName": "d"
-            }
-          ]
-        }
-      ],
-      "declarations": [
-        {
-          "$class": "concerto.metamodel@1.0.0.ConceptDeclaration",
-          "name": "file",
-          "isAbstract": false,
-          "properties": [],
-          "superType": {
-            "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
-            "name": "d",
+            "$class": "concerto.metamodel@1.0.0.Model",
+            "decorators": [],
             "namespace": "org.saluja",
-            "resolvedName": "doc"
-          }
+            "imports": [],
+            "declarations": [
+                {
+                    "$class": "concerto.metamodel@1.0.0.ConceptDeclaration",
+                    "name": "doc",
+                    "isAbstract": false,
+                    "properties": [
+                        {
+                            "$class": "concerto.metamodel@1.0.0.StringProperty",
+                            "name": "name",
+                            "isArray": false,
+                            "isOptional": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "$class": "concerto.metamodel@1.0.0.Model",
+            "decorators": [],
+            "namespace": "org.test",
+            "imports": [
+                {
+                    "$class": "concerto.metamodel@1.0.0.ImportTypes",
+                    "namespace": "org.saluja",
+                    "types": [
+                        "doc"
+                    ],
+                    "aliasedTypes": [
+                        {
+                            "$class": "concerto.metamodel@1.0.0.AliasedType",
+                            "name": "doc",
+                            "aliasedName": "d"
+                        }
+                    ]
+                }
+            ],
+            "declarations": [
+                {
+                    "$class": "concerto.metamodel@1.0.0.ConceptDeclaration",
+                    "name": "file",
+                    "isAbstract": false,
+                    "properties": [],
+                    "superType": {
+                        "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+                        "name": "d",
+                        "namespace": "org.saluja",
+                        "resolvedName": "doc"
+                    }
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }
