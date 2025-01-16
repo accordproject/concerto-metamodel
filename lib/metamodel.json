@@ -86,6 +86,12 @@
         },
         {
           "$class": "concerto.metamodel@1.0.0.StringProperty",
+          "name": "resolvedName",
+          "isArray": false,
+          "isOptional": true
+        },
+        {
+          "$class": "concerto.metamodel@1.0.0.StringProperty",
           "name": "namespace",
           "isArray": false,
           "isOptional": true
@@ -998,10 +1004,10 @@
       ]
     },
     {
-      "$class":"concerto.metamodel@1.0.0.ConceptDeclaration",
-      "name":"AliasedType",
-      "isAbstract":false,
-      "properties":[
+      "$class": "concerto.metamodel@1.0.0.ConceptDeclaration",
+      "name": "AliasedType",
+      "isAbstract": false,
+      "properties": [
         {
           "$class": "concerto.metamodel@1.0.0.StringProperty",
           "name": "name",
@@ -1089,7 +1095,6 @@
         "name": "Import"
       }
     },
-    
     {
       "$class": "concerto.metamodel@1.0.0.ConceptDeclaration",
       "name": "Model",

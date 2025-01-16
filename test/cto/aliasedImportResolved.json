@@ -4,17 +4,28 @@
         {
             "$class": "concerto.metamodel@1.0.0.Model",
             "decorators": [],
-            "namespace": "org.saluja",
+            "namespace": "org.document@1.0.0",
             "imports": [],
             "declarations": [
                 {
+                    "$class": "concerto.metamodel@1.0.0.StringScalar",
+                    "name": "DocumentName",
+                    "namespace": "org.document@1.0.0"
+                },
+                {
                     "$class": "concerto.metamodel@1.0.0.ConceptDeclaration",
-                    "name": "doc",
+                    "name": "Contract",
                     "isAbstract": false,
                     "properties": [
                         {
-                            "$class": "concerto.metamodel@1.0.0.StringProperty",
-                            "name": "name",
+                            "$class": "concerto.metamodel@1.0.0.IntegerProperty",
+                            "name": "contractId",
+                            "isArray": false,
+                            "isOptional": false
+                        },
+                        {
+                            "$class": "concerto.metamodel@1.0.0.DateTimeProperty",
+                            "name": "dateSigned",
                             "isArray": false,
                             "isOptional": false
                         }
@@ -25,19 +36,25 @@
         {
             "$class": "concerto.metamodel@1.0.0.Model",
             "decorators": [],
-            "namespace": "org.test",
+            "namespace": "org.test@1.0.0",
             "imports": [
                 {
                     "$class": "concerto.metamodel@1.0.0.ImportTypes",
-                    "namespace": "org.saluja",
+                    "namespace": "org.document@1.0.0",
                     "types": [
-                        "doc"
+                        "Contract",
+                        "DocumentName"
                     ],
                     "aliasedTypes": [
                         {
                             "$class": "concerto.metamodel@1.0.0.AliasedType",
-                            "name": "doc",
-                            "aliasedName": "d"
+                            "name": "Contract",
+                            "aliasedName": "NDAContract"
+                        },
+                        {
+                            "$class": "concerto.metamodel@1.0.0.AliasedType",
+                            "name": "DocumentName",
+                            "aliasedName": "NDAName"
                         }
                     ]
                 }
@@ -45,14 +62,52 @@
             "declarations": [
                 {
                     "$class": "concerto.metamodel@1.0.0.ConceptDeclaration",
-                    "name": "file",
+                    "name": "File",
                     "isAbstract": false,
-                    "properties": [],
+                    "properties": [
+                        {
+                            "$class": "concerto.metamodel@1.0.0.ObjectProperty",
+                            "name": "name",
+                            "type": {
+                                "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+                                "name": "NDAName",
+                                "namespace": "org.document@1.0.0",
+                                "resolvedName": "DocumentName"
+                            },
+                            "isArray": false,
+                            "isOptional": false
+                        }
+                    ],
                     "superType": {
                         "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
-                        "name": "doc",
-                        "namespace": "org.saluja"
+                        "name": "NDAContract",
+                        "namespace": "org.document@1.0.0",
+                        "resolvedName": "Contract"
                     }
+                },
+                {
+                    "$class": "concerto.metamodel@1.0.0.ConceptDeclaration",
+                    "name": "FileAsset",
+                    "isAbstract": false,
+                    "properties": [
+                        {
+                            "$class": "concerto.metamodel@1.0.0.StringProperty",
+                            "name": "fileId",
+                            "isArray": false,
+                            "isOptional": false
+                        },
+                        {
+                            "$class": "concerto.metamodel@1.0.0.ObjectProperty",
+                            "name": "file",
+                            "type": {
+                                "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+                                "name": "File",
+                                "namespace": "org.test@1.0.0"
+                            },
+                            "isArray": false,
+                            "isOptional": false
+                        }
+                    ]
                 }
             ]
         }
