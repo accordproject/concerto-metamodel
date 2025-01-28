@@ -344,6 +344,17 @@
     },
     {
       "$class": "concerto.metamodel@1.0.0.ConceptDeclaration",
+      "name": "MapKeyCountValidator",
+      "isAbstract": false,
+      "properties": [{
+          "$class": "concerto.metamodel@1.0.0.IntegerProperty",
+          "name": "maxKeys",
+          "isArray": false,
+          "isOptional": false
+      }]
+    },
+    {
+      "$class": "concerto.metamodel@1.0.0.ConceptDeclaration",
       "name": "MapDeclaration",
       "isAbstract": false,
       "properties": [
@@ -366,6 +377,16 @@
           },
           "isArray": false,
           "isOptional": false
+        },
+        {
+          "$class": "concerto.metamodel@1.0.0.ObjectProperty",
+          "name": "maxKeysValidator",
+          "type": {
+              "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+              "name": "MapKeyCountValidator"
+          },
+          "isArray": false,
+          "isOptional": true
         }
       ],
       "superType": {
