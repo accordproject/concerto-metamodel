@@ -13,7 +13,7 @@ module.exports = [
             },
         },
         plugins: {
-            jsdoc: jsdocPlugin, // ✅ Correct way to load the plugin in Flat Config
+            jsdoc: jsdocPlugin,
         },
         rules: {
             indent: ['error', 4],
