@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-'use strict';
-
 const globPattern = process.argv[2];
 
 const util = require('util');
@@ -24,27 +22,36 @@ const path = require('path');
 const copyFilePromise = util.promisify(fs.copyFile);
 const glob = require('glob');
 
-// eslint-disable-next-line require-jsdoc
+/**
+ * Copies coverage files to the destination directory.
+ * @param {Array<{ source: string, destination: string }>} files - List of files to copy.
+ * @param {string} destDir - The destination directory.
+ * @returns {Promise<void>} - A promise that resolves when the files are copied.
+ */
 function copyFiles(files, destDir) {
     if (!fs.existsSync('coverage')) {
         fs.mkdirSync('coverage');
     }
-    return Promise.all(files.map(f => {
-        return copyFilePromise(f.source, path.join(destDir, f.destination));
-    }));
+    return Promise.all(
+        files.map((f) =>
+            copyFilePromise(f.source, path.join(destDir, f.destination))
+        )
+    );
 }
 
 const lcovs = glob.sync(globPattern).map((dir) => {
     const packageName = dir.split('/').pop();
     return {
         source: path.join(dir, 'coverage/coverage-final.json'),
-        destination: `${packageName}.json`
+        destination: `${packageName}.json`,
     };
 });
 
 // usage
-copyFiles(lcovs, 'coverage').then(() => {
-    console.log('done');
-}).catch(err => {
-    console.log(err);
-});
+copyFiles(lcovs, 'coverage')
+    .then(() => {
+        console.log('done'); // eslint-disable-line no-console
+    })
+    .catch((err) => {
+        console.error(err); // eslint-disable-line no-console
+    });

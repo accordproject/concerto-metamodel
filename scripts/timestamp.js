@@ -14,19 +14,26 @@
  * limitations under the License.
  */
 
-'use strict';
-
 const path = require('path');
 const semver = require('semver');
 const dayjs = require('dayjs');
 const utc = require('dayjs/plugin/utc');
 dayjs.extend(utc);
 
-const timestamp = dayjs.utc().format('YYYYMMDDHHmmss');
+/**
+ * Generates a timestamped version string based on the package.json version.
+ * @returns {string} - The new version with a timestamp.
+ */
+function generateTimestampVersion() {
+    const timestamp = dayjs.utc().format('YYYYMMDDHHmmss');
 
-const rootDir = path.resolve('.');
-const packageJson = path.resolve(rootDir, 'package.json');
-const meta = require(packageJson);
-meta.version.replace(/-.*/, '');
-const targetVersion = semver.inc(meta.version, 'patch') + '-' + timestamp;
-console.log(`::set-output name=stamp::${targetVersion}`);
+    const rootDir = path.resolve('.');
+    const packageJson = path.resolve(rootDir, 'package.json');
+    const meta = require(packageJson);
+
+    const baseVersion = meta.version.replace(/-.*/, '');
+    return semver.inc(baseVersion, 'patch') + '-' + timestamp;
+}
+
+const targetVersion = generateTimestampVersion();
+console.log(`::set-output name=stamp::${targetVersion}`); // eslint-disable-line no-console

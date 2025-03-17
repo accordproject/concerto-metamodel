@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-'use strict';
+
 
 /**
  * Concerto metamodel management. Concerto is a framework for defining domain

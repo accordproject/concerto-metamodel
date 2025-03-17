@@ -38,17 +38,22 @@
   "author": "accordproject.org",
   "license": "Apache-2.0",
   "devDependencies": {
+    "@eslint/js": "9.21.0",
     "@types/webgl-ext": "0.0.37",
     "chai": "4.3.6",
     "chai-things": "0.2.0",
     "dayjs": "1.11.13",
-    "eslint": "8.57.1",
+    "eslint": "9.21.0",
+    "eslint-plugin-jsdoc": "50.6.3",
+    "eslint-plugin-react": "7.37.4",
+    "globals": "16.0.0",
     "jsdoc": "^4.0.4",
     "license-check-and-add": "2.3.6",
     "mocha": "10.8.2",
     "nyc": "17.1.0",
     "semver": "7.6.3",
-    "typescript": "5.7.2"
+    "typescript": "5.7.2",
+    "typescript-eslint": "8.26.0"
   },
   "browserslist": "> 0.25%, not dead",
   "license-check-and-add-config": {

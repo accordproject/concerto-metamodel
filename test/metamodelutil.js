@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-'use strict';
+
 
 const MetaModelUtil = require('../lib/metamodelutil');
 
