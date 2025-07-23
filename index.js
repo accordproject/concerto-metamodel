@@ -23,8 +23,10 @@
 
 // MetaModel handling
 const MetaModelUtil = require('./lib/metamodelutil');
+const DMCmodel = requires('./lib/dmcmodel')
 
 module.exports = {
     MetaModelUtil,
-    MetaModelNamespace: 'concerto.metamodel@1.0.0'
+    MetaModelNamespace: 'concerto.metamodel@1.0.0',
+    DMCmodel
 };
