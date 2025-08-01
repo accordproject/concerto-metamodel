@@ -105,6 +105,50 @@
             "name": "Part",
             "namespace": "org.car@1.0.0"
           }
+        },
+        {
+          "$class": "concerto.metamodel@1.0.0.EnumDeclaration",
+          "name": "Options",
+          "properties": [
+            {
+              "$class": "concerto.metamodel@1.0.0.EnumProperty",
+              "name": "Value",
+              "decorators": [
+                {
+                  "$class": "concerto.metamodel@1.0.0.Decorator",
+                  "name": "category",
+                  "arguments": [
+                    {
+                      "$class": "concerto.metamodel@1.0.0.DecoratorTypeReference",
+                      "type": {
+                        "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+                        "name": "Engineering",
+                        "namespace": "org.categories@1.0.0"
+                      },
+                      "isArray": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "decorators": [
+            {
+              "$class": "concerto.metamodel@1.0.0.Decorator",
+              "name": "category",
+              "arguments": [
+                {
+                  "$class": "concerto.metamodel@1.0.0.DecoratorTypeReference",
+                  "type": {
+                    "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+                    "name": "Engineering",
+                    "namespace": "org.categories@1.0.0"
+                  },
+                  "isArray": false
+                }
+              ]
+            }
+          ]
         }
       ]
     }

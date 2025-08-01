@@ -14,3 +14,9 @@ abstract concept Part {
 concept Wheel extends Part {
   o Double diameter
 }
+
+@category(Engineering)
+enum Options {
+  @category(Engineering)
+  o Value
+}

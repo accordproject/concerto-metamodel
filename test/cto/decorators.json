@@ -101,6 +101,48 @@
             "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
             "name": "Part"
           }
+        },
+        {
+          "$class": "concerto.metamodel@1.0.0.EnumDeclaration",
+          "name": "Options",
+          "properties": [
+            {
+              "$class": "concerto.metamodel@1.0.0.EnumProperty",
+              "name": "Value",
+              "decorators": [
+                {
+                  "$class": "concerto.metamodel@1.0.0.Decorator",
+                  "name": "category",
+                  "arguments": [
+                    {
+                      "$class": "concerto.metamodel@1.0.0.DecoratorTypeReference",
+                      "type": {
+                        "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+                        "name": "Engineering"
+                      },
+                      "isArray": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "decorators": [
+            {
+              "$class": "concerto.metamodel@1.0.0.Decorator",
+              "name": "category",
+              "arguments": [
+                {
+                  "$class": "concerto.metamodel@1.0.0.DecoratorTypeReference",
+                  "type": {
+                    "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+                    "name": "Engineering"
+                  },
+                  "isArray": false
+                }
+              ]
+            }
+          ]
         }
       ]
     }
