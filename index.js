@@ -24,12 +24,10 @@
 // MetaModel handling
 const MetaModelUtil = require('./lib/metamodelutil');
 const { DcsCto, DcsNamespace } = require('./lib/dcsmodel');
-const DCSModelAst = require('./lib/dcsmodel.json');
 
 module.exports = {
     MetaModelUtil,
     MetaModelNamespace: 'concerto.metamodel@1.0.0',
     DcsCto,
     DcsNamespace,
-    DCSModelAst
 };
