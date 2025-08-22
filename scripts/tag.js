@@ -13,17 +13,21 @@
  * limitations under the License.
  */
 
-'use strict';
-
 const semver = require('semver');
 const targetVersion = process.argv[2];
 
-if (!semver.valid(targetVersion)) {
-    console.error(`Error: the version "${targetVersion}" is invalid!`);
-    process.exit(1);
+/**
+ * Determines the tag type based on the version number.
+ * @param {string} version - The version to evaluate.
+ * @returns {string} - Returns 'unstable' if the version is a prerelease, otherwise 'latest'.
+ */
+function determineTag(version) {
+    if (!semver.valid(version)) {
+        console.error(`Error: the version "${version}" is invalid!`); // eslint-disable-line no-console
+        process.exit(1);
+    }
+    return semver.prerelease(version) ? 'unstable' : 'latest';
 }
 
-const prerelease = semver.prerelease(targetVersion);
-const tag = prerelease ? 'unstable' : 'latest';
-
-console.log(`::set-output name=tag::--tag=${tag}`);
+const tag = determineTag(targetVersion);
+console.log(`::set-output name=tag::--tag=${tag}`); // eslint-disable-line no-console
