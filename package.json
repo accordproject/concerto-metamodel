@@ -37,6 +37,9 @@
   ],
   "author": "accordproject.org",
   "license": "Apache-2.0",
+  "dependencies": {
+    "semver": "7.6.3"
+  },
   "devDependencies": {
     "@types/webgl-ext": "0.0.37",
     "chai": "4.3.6",
@@ -47,7 +50,6 @@
     "license-check-and-add": "2.3.6",
     "mocha": "10.8.2",
     "nyc": "17.1.0",
-    "semver": "7.6.3",
     "typescript": "5.7.2"
   },
   "browserslist": "> 0.25%, not dead",
