@@ -30,6 +30,7 @@ concept Range {
 concept TypeIdentifier {
   o String name
   o String namespace optional
+  o String resolvedName
 }
 
 abstract concept DecoratorLiteral {
