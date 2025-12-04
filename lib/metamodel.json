@@ -1171,7 +1171,14 @@
       "$class": "concerto.metamodel@1.0.0.ConceptDeclaration",
       "name": "ScalarDeclaration",
       "isAbstract": true,
-      "properties": [],
+      "properties": [
+        {
+          "$class": "concerto.metamodel@1.0.0.StringProperty",
+          "name": "namespace",
+          "isArray": false,
+          "isOptional": true
+        }
+      ],
       "superType": {
         "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
         "name": "Declaration"
