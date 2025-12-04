@@ -244,6 +244,7 @@ concept Models {
 }
 
 abstract concept ScalarDeclaration extends Declaration {
+  o String namespace optional
 }
 
 concept BooleanScalar extends ScalarDeclaration {
