@@ -303,3 +303,152 @@ describe('getExternalImports', () => {
         result.should.eql({'test.*':'https://dummyURI'});
     });
 });
+
+describe('resolveLocalNames with x-ranges', () => {
+    it('should resolve a type from a namespace with an x-range version', () => {
+        const baseModel = {
+            $class: 'concerto.metamodel@1.0.0.Model',
+            namespace: 'org.acme.base@1.1.0',
+            declarations: [
+                {
+                    $class: 'concerto.metamodel@1.0.0.AssetDeclaration',
+                    name: 'MyAsset',
+                    properties: []
+                }
+            ]
+        };
+
+        const testModel = {
+            $class: 'concerto.metamodel@1.0.0.Model',
+            namespace: 'org.acme.test@1.0.0',
+            imports: [
+                {
+                    $class: 'concerto.metamodel@1.0.0.ImportType',
+                    name: 'MyAsset',
+                    namespace: 'org.acme.base@1.x'
+                }
+            ],
+            declarations: [
+                {
+                    $class: 'concerto.metamodel@1.0.0.AssetDeclaration',
+                    name: 'TestAsset',
+                    superType: {
+                        $class: 'concerto.metamodel@1.0.0.TypeIdentifier',
+                        name: 'MyAsset'
+                    },
+                    properties: []
+                }
+            ]
+        };
+
+        const allModels = {
+            models: [baseModel, testModel]
+        };
+
+        const resolved = MetaModelUtil.resolveLocalNames(allModels, testModel);
+        resolved.declarations[0].superType.namespace.should.equal('org.acme.base@1.1.0');
+    });
+});
+
+describe('resolveLocalNames with multiple satisfying models', () => {
+    it('should resolve to the highest satisfying version', () => {
+        const baseModel100 = {
+            $class: 'concerto.metamodel@1.0.0.Model',
+            namespace: 'org.acme.base@1.0.0',
+            declarations: [{ $class: 'concerto.metamodel@1.0.0.AssetDeclaration', name: 'MyAsset', properties: [] }]
+        };
+        const baseModel110 = {
+            $class: 'concerto.metamodel@1.0.0.Model',
+            namespace: 'org.acme.base@1.1.0',
+            declarations: [{ $class: 'concerto.metamodel@1.0.0.AssetDeclaration', name: 'MyAsset', properties: [] }]
+        };
+        const baseModel120 = {
+            $class: 'concerto.metamodel@1.0.0.Model',
+            namespace: 'org.acme.base@1.2.0',
+            declarations: [{ $class: 'concerto.metamodel@1.0.0.AssetDeclaration', name: 'MyAsset', properties: [] }]
+        };
+        const baseModel200 = {
+            $class: 'concerto.metamodel@1.0.0.Model',
+            namespace: 'org.acme.base@2.0.0',
+            declarations: [{ $class: 'concerto.metamodel@1.0.0.AssetDeclaration', name: 'MyAsset', properties: [] }]
+        };
+
+        const testModel = {
+            $class: 'concerto.metamodel@1.0.0.Model',
+            namespace: 'org.acme.test@1.0.0',
+            imports: [
+                {
+                    $class: 'concerto.metamodel@1.0.0.ImportType',
+                    name: 'MyAsset',
+                    namespace: 'org.acme.base@1.x'
+                }
+            ],
+            declarations: [
+                {
+                    $class: 'concerto.metamodel@1.0.0.AssetDeclaration',
+                    name: 'TestAsset',
+                    superType: {
+                        $class: 'concerto.metamodel@1.0.0.TypeIdentifier',
+                        name: 'MyAsset'
+                    },
+                    properties: []
+                }
+            ]
+        };
+
+        const allModels = {
+            models: [baseModel100, baseModel110, baseModel120, baseModel200, testModel]
+        };
+
+        const resolved = MetaModelUtil.resolveLocalNames(allModels, testModel);
+        resolved.declarations[0].superType.namespace.should.equal('org.acme.base@1.2.0');
+    });
+
+    it('should resolve to the highest satisfying patch version for a patch-level x-range', () => {
+        const baseModel110 = {
+            $class: 'concerto.metamodel@1.0.0.Model',
+            namespace: 'org.acme.base@1.1.0',
+            declarations: [{ $class: 'concerto.metamodel@1.0.0.AssetDeclaration', name: 'MyAsset', properties: [] }]
+        };
+        const baseModel115 = {
+            $class: 'concerto.metamodel@1.0.0.Model',
+            namespace: 'org.acme.base@1.1.5',
+            declarations: [{ $class: 'concerto.metamodel@1.0.0.AssetDeclaration', name: 'MyAsset', properties: [] }]
+        };
+        const baseModel120 = {
+            $class: 'concerto.metamodel@1.0.0.Model',
+            namespace: 'org.acme.base@1.2.0',
+            declarations: [{ $class: 'concerto.metamodel@1.0.0.AssetDeclaration', name: 'MyAsset', properties: [] }]
+        };
+
+        const testModel = {
+            $class: 'concerto.metamodel@1.0.0.Model',
+            namespace: 'org.acme.test@1.0.0',
+            imports: [
+                {
+                    '$class': 'concerto.metamodel@1.0.0.ImportType',
+                    name: 'MyAsset',
+                    namespace: 'org.acme.base@1.1.x'
+                }
+            ],
+            declarations: [
+                {
+                    '$class': 'concerto.metamodel@1.0.0.AssetDeclaration',
+                    name: 'TestAsset',
+                    superType: {
+                        '$class': 'concerto.metamodel@1.0.0.TypeIdentifier',
+                        name: 'MyAsset'
+                    },
+                    properties: []
+                }
+            ]
+        };
+
+        const allModels = {
+            models: [baseModel110, baseModel115, baseModel120, testModel]
+        };
+
+        const resolved = MetaModelUtil.resolveLocalNames(allModels, testModel);
+        resolved.declarations[0].superType.namespace.should.equal('org.acme.base@1.1.5');
+    });
+});
