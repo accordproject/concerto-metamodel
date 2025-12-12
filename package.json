@@ -31,8 +31,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/accordproject/concerto.git",
-    "directory": "packages/concerto-metamodel"
+    "url": "https://github.com/accordproject/concerto-metamodel.git"
   },
   "keywords": [
     "blockchain",
