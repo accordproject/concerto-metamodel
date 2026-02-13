@@ -1,5 +1,6 @@
 {
   "name": "@accordproject/concerto-metamodel",
+  "version": "3.12.6",
   "description": "Concerto metamodel utilities",
   "version": "3.12.5",
   "author": "accordproject.org",
