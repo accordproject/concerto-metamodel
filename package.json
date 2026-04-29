@@ -2,6 +2,9 @@
   "name": "@accordproject/concerto-metamodel",
   "description": "Concerto metamodel utilities",
   "version": "3.12.9",
+  "workspaces": [
+    "concerto-types"
+  ],
   "author": "accordproject.org",
   "browserslist": "> 0.25%, not dead",
   "devDependencies": {
@@ -96,7 +99,7 @@
   },
   "repository": "accordproject/concerto-metamodel.git",
   "scripts": {
-    "build": "npm run build:types",
+    "build": "npm run build:types && npm -w concerto-types run build",
     "build:types": "tsc index.js --declaration --allowJs --emitDeclarationOnly --outDir types",
     "coverage": "node ./scripts/coverage.js \"packages/concerto-*\" && nyc report -t coverage --cwd . --report-dir coverage --reporter=lcov && cat ./coverage/lcov.info",
     "doc": "jsdoc --pedantic --recurse -c jsdoc.json",
