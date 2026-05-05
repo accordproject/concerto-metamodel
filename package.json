@@ -2,9 +2,6 @@
   "name": "@accordproject/concerto-metamodel",
   "description": "Concerto metamodel utilities",
   "version": "3.12.9",
-  "workspaces": [
-    "concerto-types"
-  ],
   "author": "accordproject.org",
   "browserslist": "> 0.25%, not dead",
   "devDependencies": {
