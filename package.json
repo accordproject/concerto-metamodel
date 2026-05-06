@@ -5,6 +5,8 @@
   "author": "accordproject.org",
   "browserslist": "> 0.25%, not dead",
   "devDependencies": {
+    "@accordproject/concerto-core": "4.0.2",
+    "@accordproject/concerto-codegen": "4.0.0",
     "@types/webgl-ext": "0.0.37",
     "chai": "4.3.6",
     "chai-things": "0.2.0",
@@ -96,7 +98,8 @@
   },
   "repository": "accordproject/concerto-metamodel.git",
   "scripts": {
-    "build": "npm run build:types",
+    "build": "npm run build:types && npm run build:concerto-types:exports",
+    "build:concerto-types:exports": "node ./scripts/codegen.js",
     "build:types": "tsc index.js --declaration --allowJs --emitDeclarationOnly --outDir types",
     "coverage": "node ./scripts/coverage.js \"packages/concerto-*\" && nyc report -t coverage --cwd . --report-dir coverage --reporter=lcov && cat ./coverage/lcov.info",
     "doc": "jsdoc --pedantic --recurse -c jsdoc.json",
