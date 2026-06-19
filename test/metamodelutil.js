@@ -303,3 +303,169 @@ describe('getExternalImports', () => {
         result.should.eql({'test.*':'https://dummyURI'});
     });
 });
+
+describe('resolveTypeNames (null $class rejection)', () => {
+    it('should throw for null $class on decorator nodes', () => {
+        const priorModels = {
+            $class: 'concerto.metamodel@1.0.0.Models',
+            models: []
+        };
+        const metaModel = {
+            $class: 'concerto.metamodel@1.0.0.Model',
+            namespace: 'test@1.0.0',
+            imports: [],
+            declarations: [
+                {
+                    $class: 'concerto.metamodel@1.0.0.ConceptDeclaration',
+                    name: 'TestConcept',
+                    isAbstract: false,
+                    properties: [],
+                    decorators: [
+                        {
+                            $class: null,
+                            name: 'AnotherDecorator',
+                            arguments: []
+                        }
+                    ]
+                }
+            ]
+        };
+
+        (() => MetaModelUtil.resolveLocalNames(priorModels, metaModel))
+            .should.throw(/Unrecognized \$class/);
+    });
+
+    it('should throw for undefined $class on decorator nodes', () => {
+        const priorModels = {
+            $class: 'concerto.metamodel@1.0.0.Models',
+            models: []
+        };
+        const metaModel = {
+            $class: 'concerto.metamodel@1.0.0.Model',
+            namespace: 'test2@1.0.0',
+            imports: [],
+            declarations: [
+                {
+                    $class: 'concerto.metamodel@1.0.0.ConceptDeclaration',
+                    name: 'TestConcept',
+                    isAbstract: false,
+                    properties: [],
+                    decorators: [
+                        {
+                            name: 'MissingClassDecorator',
+                            arguments: []
+                        }
+                    ]
+                }
+            ]
+        };
+
+        (() => MetaModelUtil.resolveLocalNames(priorModels, metaModel))
+            .should.throw(/Unrecognized \$class/);
+    });
+
+    it('should throw for null $class on declaration nodes', () => {
+        const priorModels = {
+            $class: 'concerto.metamodel@1.0.0.Models',
+            models: [{
+                $class: 'concerto.metamodel@1.0.0.Model',
+                namespace: 'dep@1.0.0',
+                imports: [],
+                declarations: [{
+                    $class: 'concerto.metamodel@1.0.0.ConceptDeclaration',
+                    name: 'Base',
+                    isAbstract: true,
+                    properties: []
+                }]
+            }]
+        };
+        const metaModel = {
+            $class: 'concerto.metamodel@1.0.0.Model',
+            namespace: 'test3@1.0.0',
+            imports: [{ $class: 'concerto.metamodel@1.0.0.ImportAll', namespace: 'dep@1.0.0' }],
+            declarations: [
+                {
+                    $class: null,
+                    name: 'Child',
+                    isAbstract: false,
+                    superType: { $class: 'concerto.metamodel@1.0.0.TypeIdentifier', name: 'Base' },
+                    properties: []
+                }
+            ]
+        };
+
+        (() => MetaModelUtil.resolveLocalNames(priorModels, metaModel))
+            .should.throw(/Unrecognized \$class/);
+    });
+
+    it('should throw for null $class on property nodes', () => {
+        const priorModels = {
+            $class: 'concerto.metamodel@1.0.0.Models',
+            models: [{
+                $class: 'concerto.metamodel@1.0.0.Model',
+                namespace: 'dep@1.0.0',
+                imports: [],
+                declarations: [{
+                    $class: 'concerto.metamodel@1.0.0.ConceptDeclaration',
+                    name: 'Address',
+                    isAbstract: false,
+                    properties: []
+                }]
+            }]
+        };
+        const metaModel = {
+            $class: 'concerto.metamodel@1.0.0.Model',
+            namespace: 'test4@1.0.0',
+            imports: [{ $class: 'concerto.metamodel@1.0.0.ImportAll', namespace: 'dep@1.0.0' }],
+            declarations: [
+                {
+                    $class: 'concerto.metamodel@1.0.0.ConceptDeclaration',
+                    name: 'Person',
+                    isAbstract: false,
+                    properties: [
+                        {
+                            $class: null,
+                            name: 'address',
+                            isArray: false,
+                            isOptional: false,
+                            type: {
+                                $class: 'concerto.metamodel@1.0.0.TypeIdentifier',
+                                name: 'Address'
+                            }
+                        }
+                    ]
+                }
+            ]
+        };
+
+        (() => MetaModelUtil.resolveLocalNames(priorModels, metaModel))
+            .should.throw(/Unrecognized \$class/);
+    });
+
+    it('should throw for null $class on MapDeclaration nodes', () => {
+        const priorModels = {
+            $class: 'concerto.metamodel@1.0.0.Models',
+            models: []
+        };
+        const metaModel = {
+            $class: 'concerto.metamodel@1.0.0.Model',
+            namespace: 'test5@1.0.0',
+            imports: [],
+            declarations: [
+                {
+                    $class: null,
+                    name: 'MyMap',
+                    key: {
+                        $class: 'concerto.metamodel@1.0.0.StringMapKeyType'
+                    },
+                    value: {
+                        $class: 'concerto.metamodel@1.0.0.StringMapValueType'
+                    }
+                }
+            ]
+        };
+
+        (() => MetaModelUtil.resolveLocalNames(priorModels, metaModel))
+            .should.throw(/Unrecognized \$class/);
+    });
+});
