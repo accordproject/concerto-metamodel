@@ -468,4 +468,36 @@ describe('resolveTypeNames (null $class rejection)', () => {
         (() => MetaModelUtil.resolveLocalNames(priorModels, metaModel))
             .should.throw(/Unrecognized \$class/);
     });
+
+    it('should pass through for non-empty $class that does not need resolution', () => {
+        const priorModels = {
+            $class: 'concerto.metamodel@1.0.0.Models',
+            models: []
+        };
+        const metaModel = {
+            $class: 'concerto.metamodel@1.0.0.Model',
+            namespace: 'test6@1.0.0',
+            imports: [],
+            declarations: [
+                {
+                    $class: 'concerto.metamodel@1.0.0.ConceptDeclaration',
+                    name: 'Thing',
+                    isAbstract: false,
+                    properties: [
+                        {
+                            $class: 'concerto.metamodel@1.0.0.StringProperty',
+                            name: 'label',
+                            isArray: false,
+                            isOptional: false
+                        }
+                    ]
+                }
+            ]
+        };
+
+        const resolved = MetaModelUtil.resolveLocalNames(priorModels, metaModel);
+
+        resolved.declarations[0].properties[0].$class.should.equal('concerto.metamodel@1.0.0.StringProperty');
+        resolved.declarations[0].properties[0].name.should.equal('label');
+    });
 });
