@@ -501,3 +501,50 @@ describe('resolveTypeNames (null $class rejection)', () => {
         resolved.declarations[0].properties[0].name.should.equal('label');
     });
 });
+
+describe('MetaModel (CollectionSizeValidator)', () => {
+    const metaModelCto = require('../lib/metamodel');
+
+    it('should contain the CollectionSizeValidator concept', () => {
+        metaModelCto.should.include('concept CollectionSizeValidator');
+        metaModelCto.should.include('o Integer minSize optional');
+        metaModelCto.should.include('o Integer maxSize optional');
+    });
+
+    it('should include sizeValidator on abstract Property', () => {
+        metaModelCto.should.include('o CollectionSizeValidator sizeValidator optional');
+    });
+
+    it('should resolve a model with sizeValidator on a property', () => {
+        const model = {
+            '$class': 'concerto.metamodel@1.0.0.Model',
+            'namespace': 'org.test',
+            'imports': [],
+            'declarations': [
+                {
+                    '$class': 'concerto.metamodel@1.0.0.ConceptDeclaration',
+                    'name': 'Thing',
+                    'isAbstract': false,
+                    'properties': [
+                        {
+                            '$class': 'concerto.metamodel@1.0.0.StringProperty',
+                            'name': 'tags',
+                            'isArray': true,
+                            'isOptional': false,
+                            'sizeValidator': {
+                                '$class': 'concerto.metamodel@1.0.0.CollectionSizeValidator',
+                                'minSize': 1,
+                                'maxSize': 10
+                            }
+                        }
+                    ]
+                }
+            ]
+        };
+
+        const resolved = MetaModelUtil.resolveLocalNames([], model);
+        resolved.declarations[0].properties[0].sizeValidator.$class.should.equal('concerto.metamodel@1.0.0.CollectionSizeValidator');
+        resolved.declarations[0].properties[0].sizeValidator.minSize.should.equal(1);
+        resolved.declarations[0].properties[0].sizeValidator.maxSize.should.equal(10);
+    });
+});
