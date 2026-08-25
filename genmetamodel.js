@@ -46,3 +46,8 @@ module.exports = metaModelCto;
 `;
 const metaModelJsPath = path.resolve(__dirname, 'lib', 'metamodel.js');
 fs.writeFileSync(metaModelJsPath, metaModelJs, 'utf-8');
+
+const { Parser } = require('@accordproject/concerto-cto');
+const metaModelAst = Parser.parse(metaModelCto, 'metamodel.cto', { skipLocationNodes: true });
+const metaModelJsonPath = path.resolve(__dirname, 'lib', 'metamodel.json');
+fs.writeFileSync(metaModelJsonPath, JSON.stringify(metaModelAst, null, 2) + '\n', 'utf-8');
