@@ -195,7 +195,6 @@ export interface IProperty extends IConcept {
    name: string;
    isArray: boolean;
    isOptional: boolean;
-   sizeValidator?: ICollectionSizeValidator;
    decorators?: IDecorator[];
    location?: IRange;
 }
@@ -208,11 +207,6 @@ IStringProperty |
 IDoubleProperty | 
 IIntegerProperty | 
 ILongProperty;
-
-export interface ICollectionSizeValidator extends IConcept {
-   minSize?: number;
-   maxSize?: number;
-}
 
 export interface IRelationshipProperty extends IProperty {
    type: ITypeIdentifier;
