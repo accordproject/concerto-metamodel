@@ -19,7 +19,9 @@ const EXTRA_EXPORTS = [
  * Generate TypeScript files from the metamodel.
  */
 async function main() {
-    const modelManager = new ModelManager({addMetamodel:true, strict: true});
+    const metaModelCto = fs.readFileSync(path.resolve(__dirname, '..', 'lib', 'metamodel.cto'), 'utf-8');
+    const modelManager = new ModelManager({ strict: true });
+    modelManager.addCTOModel(metaModelCto, 'metamodel.cto');
     const visitor = new TypescriptVisitor();
 
     const fileWriter = new FileWriter(path.resolve(__dirname, '..', 'types', 'lib'));
