@@ -86,13 +86,13 @@
         },
         {
           "$class": "concerto.metamodel@1.0.0.StringProperty",
-          "name": "resolvedName",
+          "name": "namespace",
           "isArray": false,
           "isOptional": true
         },
         {
           "$class": "concerto.metamodel@1.0.0.StringProperty",
-          "name": "namespace",
+          "name": "resolvedName",
           "isArray": false,
           "isOptional": true
         }
@@ -695,6 +695,16 @@
         },
         {
           "$class": "concerto.metamodel@1.0.0.ObjectProperty",
+          "name": "sizeValidator",
+          "type": {
+            "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
+            "name": "CollectionSizeValidator"
+          },
+          "isArray": false,
+          "isOptional": true
+        },
+        {
+          "$class": "concerto.metamodel@1.0.0.ObjectProperty",
           "name": "decorators",
           "type": {
             "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
@@ -710,6 +720,25 @@
             "$class": "concerto.metamodel@1.0.0.TypeIdentifier",
             "name": "Range"
           },
+          "isArray": false,
+          "isOptional": true
+        }
+      ]
+    },
+    {
+      "$class": "concerto.metamodel@1.0.0.ConceptDeclaration",
+      "name": "CollectionSizeValidator",
+      "isAbstract": false,
+      "properties": [
+        {
+          "$class": "concerto.metamodel@1.0.0.IntegerProperty",
+          "name": "minSize",
+          "isArray": false,
+          "isOptional": true
+        },
+        {
+          "$class": "concerto.metamodel@1.0.0.IntegerProperty",
+          "name": "maxSize",
           "isArray": false,
           "isOptional": true
         }
