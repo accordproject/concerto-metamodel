@@ -20,7 +20,7 @@ const EXTRA_EXPORTS = [
  */
 async function main() {
     const metaModelCto = fs.readFileSync(path.resolve(__dirname, '..', 'lib', 'metamodel.cto'), 'utf-8');
-    const modelManager = new ModelManager({ strict: true });
+    const modelManager = new ModelManager();
     modelManager.addCTOModel(metaModelCto, 'metamodel.cto');
     const visitor = new TypescriptVisitor();
 
