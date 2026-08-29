@@ -1,7 +1,7 @@
 import MetaModelUtil = require("./lib/metamodelutil");
+export const MetaModelNamespace: string;
 import { DcsCto } from "./lib/dcsmodel";
 import { DcsNamespace } from "./lib/dcsmodel";
-export declare let MetaModelNamespace: string;
 export { MetaModelUtil, DcsCto, DcsNamespace };
 
 export * from './lib/concerto@1.0.0';

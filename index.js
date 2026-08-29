@@ -25,9 +25,15 @@
 const MetaModelUtil = require('./lib/metamodelutil');
 const { DcsCto, DcsNamespace } = require('./lib/dcsmodel');
 
-module.exports = {
-    MetaModelUtil,
-    MetaModelNamespace: 'concerto.metamodel@1.0.0',
-    DcsCto,
-    DcsNamespace,
-};
+// Hoisted to a local binding (rather than an inline string literal in the
+// object below) so that cjs-module-lexer - the static analyzer Node's ESM
+// loader uses to detect named exports of a CommonJS module - can see it.
+// The lexer only recognises `key: identifier` assignments; a `key: <string
+// literal>` entry stops it from scanning any properties that follow it,
+// which silently hid DcsCto and DcsNamespace from ESM `import { ... }`.
+const MetaModelNamespace = /** @type {string} */ ('concerto.metamodel@1.0.0');
+
+exports.MetaModelUtil = MetaModelUtil;
+exports.MetaModelNamespace = MetaModelNamespace;
+exports.DcsCto = DcsCto;
+exports.DcsNamespace = DcsNamespace;
