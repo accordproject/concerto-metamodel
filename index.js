@@ -25,9 +25,17 @@
 const MetaModelUtil = require('./lib/metamodelutil');
 const { DcsCto, DcsNamespace } = require('./lib/dcsmodel');
 
-module.exports = {
-    MetaModelUtil,
-    MetaModelNamespace: 'concerto.metamodel@1.0.0',
-    DcsCto,
-    DcsNamespace,
-};
+// Two details below are deliberate, and both matter to cjs-module-lexer - the
+// static analyzer Node's ESM loader uses to detect the named exports of a
+// CommonJS module. The exports are assigned individually rather than as a
+// single `module.exports = { ... }` object, and MetaModelNamespace is a local
+// binding rather than an inline string literal. Within an object literal the
+// lexer only recognises shorthand and `key: identifier` entries, so the
+// previous `MetaModelNamespace: 'concerto.metamodel@1.0.0'` halted its scan
+// and silently hid DcsCto and DcsNamespace from ESM `import { ... }`.
+const MetaModelNamespace = /** @type {string} */ ('concerto.metamodel@1.0.0');
+
+exports.MetaModelUtil = MetaModelUtil;
+exports.MetaModelNamespace = MetaModelNamespace;
+exports.DcsCto = DcsCto;
+exports.DcsNamespace = DcsNamespace;
