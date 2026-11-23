@@ -24,6 +24,7 @@
 // MetaModel handling
 const MetaModelUtil = require('./lib/metamodelutil');
 const { DcsCto, DcsNamespace } = require('./lib/dcsmodel');
+const MetaModelUtilException = require('./lib/metamodelutilexception');
 
 // Two details below are deliberate, and both matter to cjs-module-lexer - the
 // static analyzer Node's ESM loader uses to detect the named exports of a
@@ -39,3 +40,4 @@ exports.MetaModelUtil = MetaModelUtil;
 exports.MetaModelNamespace = MetaModelNamespace;
 exports.DcsCto = DcsCto;
 exports.DcsNamespace = DcsNamespace;
+exports.MetaModelUtilException = MetaModelUtilException;
